@@ -1,0 +1,44 @@
+{% extends 'minato/main/base.html' %}
+
+{% block content %}
+
+    <div class="container d-flex justify-content-start">
+        <div class="container">
+            <p>SELECT PROG</p>
+            <select class="form-select" name="" id="progDropdown">
+                {% for prog in prog_list%}
+                    <option>{{prog}}</option>
+                {% endfor %}
+            </select>
+            <div class="container m-2 p-2">
+                <button id="refreshTable">REFRESH</button>
+            </div>
+
+        </div>
+
+        <div class="container">
+        </div>
+
+    </div>
+
+
+    <div class="container p-3">
+        <table class="table" id="projtable">
+            <thead>
+                <th scope="prog">PROG</th>
+                <th scope="proj">PROJ</th>
+                <th scope="desc">DESC</th>
+            </thead>
+            <tbody id="projtableResults">
+            </tbody>
+        </table>
+    </div>
+
+<canvas id="charttest" width="400" height="400"></canvas>
+
+
+{{ projlist|json_script:"data-id" }}
+
+    <script src="{% static 'minato/js/vg_learn.js' %}"></script>
+
+{% endblock %}

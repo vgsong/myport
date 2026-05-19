@@ -1,0 +1,27 @@
+{% extends 'minato/main/base.html' %}
+{% load markdown_extras %}
+{% block content %}
+
+    <div class="container">
+        <div class="container border border-dark shadow p-3">
+            <div>
+                <h1 class="m-0 p-0">{{ blog_entry.title }}</h1>
+                <p class="m-0 p-0 font-weight-light" style="font-size:10px">created on {{ blog_entry.created_on }}</p>
+                <p class="m-0 p-0 font-weight-light" style="font-size:10px">by {{ blog_entry.author }}</p>
+                <p class="m-0 p-0 font-weight-light" style="font-size:10px">on {{ blog_entry.category.all|join:", "}}</p>
+                <hr class="dashed">
+            </div>
+
+
+            <div class="container">
+                <p>{{  blog_entry.body | markdown }}</p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container pl-3 pt-3">
+        <a href="{% url 'blog' %}"><p>‹--Back</p></a>
+    </div>
+
+{% endblock %}

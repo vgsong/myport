@@ -1,0 +1,11 @@
+.submenu-overlay {
+  position: absolute; /* Positions the submenu relative to its parent container (the navbar) */
+  background-color: #000; /* Ensures the submenu has a background */
+  border: 1px solid rgba(0, 0, 0, 0.15); /* Adds a border for definition */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175); /* Adds a shadow for depth */
+  z-index: 1000; /* Ensures it appears above other content */
+  /* Optional: Adjust positioning as needed */
+  top: 100%; 
+  left: 0;
+  min-width: 200px;
+}

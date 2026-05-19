@@ -1,0 +1,4 @@
+.venv/
+kazusong/
+**/__pycache__/
+*.pyc

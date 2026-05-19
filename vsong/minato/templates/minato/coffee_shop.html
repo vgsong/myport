@@ -1,0 +1,58 @@
+{% extends 'minato/main/base.html' %}
+{% load plotly_dash %}
+{% block content %}
+
+<h3>Coffee Shop Sales</h3>
+
+<div class="container">
+
+    <p>Finding ways to practice data visualization. Coffee Shop Sales practice data was obtained from the web.
+    Just a place where I can put notes from and for practices. I have much more freedom making dynamic graphs on excel. My knowledge of JavaScript/front-end is limited.
+    I am at mercy of what libraries hand to me. Well, that is at every level of my limited programming knowledge...
+    </p>
+</div>
+
+
+<div class="container m-5">
+    <div class="row align-items-center border border-dark p-3 rounded shadow-sm">
+        
+        <!-- Left Side: Plotly Graph -->
+        <div class="col-lg-8 col-md-12 mb-3 mb-lg-0">
+            {% plotly_app name='coffee_salescat' ratio=0.7%}
+        </div>
+        
+        <!-- Right Side: Explanation -->
+        <div class="col-lg-4 col-md-12">
+            <h3>Graph Analysis</h3>
+            <p class="text-muted">
+                Simple bar graph practice. Using .csv file as data instead of sql as of now. Just Total Sales of 6 month period for a Pastry/Coffee Shop sales data I got from the web. Sales are totals by category. Pretty self-explanatory.
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container m-5">
+
+    <div class="row align-items-center border border-dark p-3 rounded shadow-sm">
+        <!-- Left Side: Plotly Graph -->
+        <div class="col-lg-8 col-md-12 mb-3 mb-lg-0">
+            {% plotly_app name='ex_two' ratio=0.7 %}
+        </div>
+        
+        <!-- Right Side: Explanation -->
+        <div class="col-lg-4 col-md-12">
+            <h3>Graph Analysis</h3>
+            <p class="text-muted">
+                This graph shows the interaction between two variables. 
+                Use the left side for visualization and this space for a brief, 
+                concise explanation of key trends or data points.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'minato/main/base.html' %}
+{% block content %}
+
+
+    <div class="container pt-3 ms-5">
+
+        <h2>My Daily</h2>
+
+        <h5>Recent Posts:</h5>
+        {% for entry in recent_posts %}
+
+            <a href="{% url 'blog_detail' entry.id %}"><p><span style="display: inline-block; width: 5px; height: 5px; background-color: #FFFF; margin: 5px;"></span>{{entry.title}} - {{entry.last_modified}}</p></a>
+
+        {% endfor%}
+        
+    </div>
+        
+{% endblock %}
