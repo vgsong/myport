@@ -43,9 +43,6 @@ INSTALLED_APPS = [
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'compressor',
     'django_ckeditor_5',
-
-
-
 ]
 
 

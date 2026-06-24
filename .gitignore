@@ -7,3 +7,4 @@ brs.sh
 actvt.sh
 .vscode/
 */.vscode/
+vsong/db.sqlite3

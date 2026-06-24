@@ -23,5 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
     path('', include('minato.urls')),
-    path('__reload__/', include('django_browser_reload.urls')),
 ]
