@@ -5,5 +5,5 @@ kazusong/
 /brs.sh
 brs.sh
 actvt.sh
-.vscode
-*/.vscode
+.vscode/
+*/.vscode/
