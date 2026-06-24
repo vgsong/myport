@@ -1,20 +1,24 @@
-from dash import dcc, html
+import json
+import os
 
-from django.shortcuts import render
-from django_plotly_dash import DjangoDash
-from django.templatetags.static import static
-
-from .models import BlogEntry
-
-import plotly.express as px
-import plotly.graph_objects as go
 
 import pandas as pd
 import numpy as np
 
+from dash import dcc, html
 from pathlib import Path
 
-import os
+from django.http import JsonResponse
+from django.shortcuts import render
+from django_plotly_dash import DjangoDash
+from django.templatetags.static import static
+
+from .models import BlogEntry, JobTrackerEntry
+from .forms import JobTrackerEntryForm
+
+import plotly.express as px
+import plotly.graph_objects as go
+
 
 MDIR = Path('/home/vsong/DJANGO/vsong/minato/static/minato/data/')
 
@@ -163,9 +167,10 @@ def coffeesales_chart():
 
 def index(request):
     
-
+    recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
     context = {
             'username' : 'vgs',
+            'recent_posts' : recent_posts[:7],
             # 'line': dropdown_chart(),
     }
 
@@ -187,10 +192,10 @@ def coffee_shop(request):
 # ----- blog views --------------------------
 def blog(request):
 
-    recent_posts = BlogEntry.objects.all()
+    recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
 
     context = {
-               'recent_posts' : recent_posts[:5]
+               'recent_posts' : recent_posts
               }
 
     return render(request, 'minato/blog.html', context)
@@ -204,7 +209,6 @@ def blog_detail(request, detail_id):
                }
                
     return render(request, 'minato/blog_detail.html', context)
-
 
 def jquery_learn(request):
 
@@ -224,3 +228,38 @@ def jquery_learn(request):
             'prog_list': prog_list,
         }
     return render(request, 'minato/jquery_learn.html', context)
+
+
+def job_tracker(request):
+
+    applied_cat = [x[0] for x in JobTrackerEntry.STATUS_CHOICES]
+    jobs_applied = JobTrackerEntry.objects.all().order_by('-applied_on')
+    form = JobTrackerEntryForm()
+
+    context = {
+        'jobs_applied' : jobs_applied,
+        'applied_cat' : applied_cat,
+        'form': form,
+    }
+
+    return render(request, 'minato/job_tracker.html', context)
+
+
+def update_item_status(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+        applied_id = data.get('id')
+        new_status = data.get('status')
+        print(new_status)
+        item = JobTrackerEntry.objects.get(id=applied_id)
+        item.status = new_status
+        item.save()
+
+        return JsonResponse({'success' : True})
+    return JsonResponse({'success' : False}, status=400)
+
+def profexp(request):
+    return render(request, 'minato/profexp.html')
+
+

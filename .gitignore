@@ -2,3 +2,6 @@
 kazusong/
 **/__pycache__/
 *.pyc
+/brs.sh
+brs.sh
+actvt.sh

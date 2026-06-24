@@ -1,0 +1,97 @@
+{% extends 'minato/main/base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h2><strong>Job Tracker</strong></h2>
+
+        <p>Recent applied:</p>
+
+    </div>
+        
+    <div class="d-flex flex-column flex-md-row gap-4">
+        <div class="flex-grow-1 m-0">
+        {% for applied in jobs_applied %}
+            <div class="card shadow-sm h-10 w-75 m-2" >
+                <div class="card-body py-2 px-3">
+
+                    <div class="d-flex justify-content-between align-items-center mb-1">
+                        <h5 class="card-title text-truncate mb-0 fw-bold fs-6 col-7" title="{{ job.title }}">
+                            {{ applied.jobtitle }}
+                        </h5>   
+
+                        <div class="">{{ applied.company }}</div>
+
+
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center small text-secondary">
+                        <div>
+                            <i class="bi bi-clock-his[sudo: authenticate] Password:          
+                                    netlink error: no device matches name (offset 24)
+                                    netlink error: No such device
+                                    tory me-1"></i>Applied on {{ applied.applied_on }}
+                        </div>
+
+                        <div class="col5">
+                        <select name="" id="" class="form-select" onchange="updateStatus(this.value, '{{ applied.id }}')">
+                            {% for appcat in applied_cat %}
+                                {% if appcat == applied.status%}
+                                    <option value="{{ appcat }}" selected>{{ appcat }}</option>
+                                {% else %}
+                                    <option value="{{ appcat }}">{{ appcat }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        {% endfor%}
+        </div>
+
+        <div class="flex-grow-1 m-0">
+            <h5>Add New</h5>
+            <div class="container">
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <button type="submit">Submit New Item</button>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+        
+    <script>
+
+        function updateStatus(newValue, appliedId) {
+
+            fetch('/update_item_status/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type' : 'application/json',
+                    'X-CSRFToken': '{{csrf_token}}'
+                },
+                body: JSON.stringify({
+                    id: appliedId,
+                    status: newValue,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('updated successfully!')
+                }
+            });
+        }
+
+    </script>
+
+
+{% endblock %}

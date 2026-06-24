@@ -1,6 +1,6 @@
 #~/bin/bash
 PROJECT_DIR="/home/vsong/DJANGO/vsong"
-source .venv/bin/activate
+source ~/DJANGO/.venv/bin/activate
 
 cd "$PROJECT_DIR"
 

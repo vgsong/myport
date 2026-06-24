@@ -3,21 +3,40 @@
 {% load plotly_dash %}
 {% block content %}
 
-<div class="container p-3 ms-5">
+<div class="container p-3 ms-5 d-flex flex-column">
 
-    <h2>Hi --</h2>
+    <div class="container col-12">
+        <h2>VSONG --</h2>
+        
+        <p>Placeholder for summary links of dashboard/projects</p>
+        <p>To do:</p>
+        <ul>
+            <li>Plotly Basics</li>
+            <li>Coffee Sales Dashboard</li>
+            <li>Reading</li>
+            <li>Blog Learning</li>
+            <li>Request Tracker</li>
+            <li>Job Application Tracker</li>
+            <li>create a github rep</li>
+            <li>pushd django project to pythonanywhere</li>
+        </ul>
+    </div>
 
-    <p>Placeholder for summary links of dashboard/projects</p>
+    <hr>
 
-    <p>To do:</p>
-
-    <ul>
-        <li>Plotly Basics</li>
-        <li>Coffee Sales Dashboard</li>
-        <li>Reading</li>
-        <li>Blog Learning</li>
-        <li>Request Tracker</li>
-    </ul>
+    <div class="container col-12 mt-3">
+        <h5>Recent Posts</h5>
+        <div class="container p-3 pt-0">
+        {% for entry in recent_posts %}
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-0 m-0">
+                    <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
+                    <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
+                </li>
+            </ul>
+        {% endfor%}
+        </div>
+    </div>
 
 </div>
 

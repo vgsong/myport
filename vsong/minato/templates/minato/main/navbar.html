@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md bg-body-tertiary m-2">
+<nav class="navbar navbar-expand-md m-2 border-bottom border-3 d-flex justify-content-between" data-bs-theme="forest-dark" >
 
-  <div class="container-fluid">
+  <div class="container-fluid d-flex justify-content-between">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,6 +12,10 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'blog' %}">Blog</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'profexp' %}">ProfExp</a>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
             Projects
@@ -21,11 +25,19 @@
             <li><a class="dropdown-item" href="{% url 'jquery_learn' %}">JS/JQUERY Learn</a></li>
           </ul>
         </li>
+        {% if request.user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
         </li>
+        {% endif %}
       </ul>
     </div>
   </div>
+  
+
 
 </nav>

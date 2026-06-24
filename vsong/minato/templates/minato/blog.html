@@ -4,12 +4,18 @@
 
     <div class="container pt-3 ms-5">
 
-        <h2>My Daily</h2>
+        <h2><strong>My Daily</strong></h2>
 
-        <h5>Recent Posts:</h5>
+        <p>Recent Posts:</p>
+        
         {% for entry in recent_posts %}
 
-            <a href="{% url 'blog_detail' entry.id %}"><p><span style="display: inline-block; width: 5px; height: 5px; background-color: #FFFF; margin: 5px;"></span>{{entry.title}} - {{entry.last_modified}}</p></a>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-0 m-0">
+                    <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
+                    <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
+                </li>
+            </ul>
 
         {% endfor%}
         

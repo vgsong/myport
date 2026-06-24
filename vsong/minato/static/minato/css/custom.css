@@ -1,0 +1,48 @@
+/* 1. Set your custom primary color globally */
+:root {
+  --bs-primary: #2d6a4f;
+  --bs-primary-rgb: 45, 106, 79;
+}
+
+/* 2. Define the background and text for your custom theme */
+[data-bs-theme="forest-dark"] {
+  color-scheme: dark;
+
+  /* Main background and main text */
+  --bs-body-bg: #0b1410;       
+  --bs-body-color: #e1eae6;    
+  --bs-body-bg-rgb: 11, 20, 16;
+
+  /* Card and sidebar background surfaces */
+  --bs-tertiary-bg: #14241d;   
+  --bs-border-color: #233d32;  
+
+  /* Secondary/Muted text colors */
+  --bs-secondary-color: #94aba0;
+  --bs-heading-color: #e1eae6;
+}
+
+.timeline {
+  border-left: 4px solid hsl(0, 0%, 0%);
+  position: relative;
+  list-style: none;
+}
+
+.timeline .timeline-item {
+  position: relative;
+}
+
+.timeline .timeline-item:after {
+  position: absolute;
+  display: block;
+  top: 0;
+}
+
+.timeline .timeline-item:after {
+  background-color: hsl(0, 0%, 0%);
+  left: -38px;
+  border-radius: 50%;
+  height: 11px;
+  width: 11px;
+  content: "";
+}

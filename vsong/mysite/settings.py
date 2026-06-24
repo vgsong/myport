@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-phz90ngt+r@++#5a_ck=wc!-pq-!g5c4g-!u9w410w)!vj_@^g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -41,10 +41,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap5',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'compressor',
+    'django_ckeditor_5',
+
+
 
 ]
 
+
 MIDDLEWARE = [
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -53,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_plotly_dash.middleware.BaseMiddleware',
+    
     
 ]
 
@@ -135,6 +142,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'django_plotly_dash.finders.DashAssetFinder',
     'django_plotly_dash.finders.DashComponentFinder',
+    'compressor.finders.CompressorFinder',
 ]
 
 CKEDITOR_CONFIGS = {
@@ -143,6 +151,9 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+COMPRESS_PRECOMPILERS = (
+    {'text/x-css',  'django_libsass.SassCompuler'},
+    )
 
 STATIC_URL = 'static/'
 
@@ -155,5 +166,9 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
+# Absolute filesystem path to the directory that will hold user-uploaded files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# URL that handles the media served from MEDIA_ROOT
+MEDIA_URL = '/media/'
 

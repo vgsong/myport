@@ -5,23 +5,26 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
-<html data-bs-theme="dark">
+<!-- <html data-bs-theme="forest-dark"> -->
+<html >
 
     <head>
+
         <!-- <link rel="stylesheets" href="{% static 'minato/style.css' %}"> -->
         <link rel="icon" href="data:,">
         <script src="{% static 'minato/js/jquery-3.7.1.min.js' %}"></script>
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'minato/css/custom.css' %}">
 
     </head>
-
-    <body>
+        
+    <body class="m-3">
 
         {% include 'minato/main/navbar.html' %}
 
-        <div class="d-flex flex-row bd-highlight m-3 p-2">
+        <div class="d-flex flex-row bd-highlight p-2">
 
-            <div class="bd-highlight col-12 shadow p-4">
+            <div class="bd-highlight col-12 shadow p-2">
                     
                 {% block content %}
                 {% endblock %}
@@ -31,4 +34,5 @@
         </div>
 
     </body>
+
 </html>
