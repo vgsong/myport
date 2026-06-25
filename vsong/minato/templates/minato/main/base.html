@@ -2,7 +2,7 @@
 
 {% load static %}
 {% load django_bootstrap5 %}
-{% bootstrap_css %}
+
 {% bootstrap_javascript %}
 
 <!-- <html data-bs-theme="forest-dark"> -->
@@ -15,7 +15,7 @@
         <script src="{% static 'minato/js/jquery-3.7.1.min.js' %}"></script>
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
         <link rel="stylesheet" href="{% static 'minato/css/custom.css' %}">
-
+        {% bootstrap_css %}
     </head>
         
     <body class="m-3">
@@ -32,7 +32,7 @@
             </div>
 
         </div>
-
+        {% bootstrap_javascript %}
     </body>
 
 </html>

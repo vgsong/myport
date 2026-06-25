@@ -1,7 +1,6 @@
 import json
 import os
 
-
 import pandas as pd
 import numpy as np
 
@@ -14,6 +13,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from django_plotly_dash import DjangoDash
 from django.templatetags.static import static
+from django.conf import settings
 
 from .models import BlogEntry, JobTrackerEntry
 from .forms import JobTrackerEntryForm
@@ -24,6 +24,8 @@ import plotly.graph_objects as go
 load_dotenv()
 
 MDIR = Path(os.getenv('MDIR'))
+STATIC_DIR = Path(os.getenv('STATIC_DIR'))
+
 
 # ----- plotly constructors ----
 def coffeesales_chart():
@@ -206,9 +208,17 @@ def blog(request):
 
 def blog_detail(request, detail_id):
     blog_entry = BlogEntry.objects.get(pk=int(detail_id))
+    pic_filenames = []
+    pic_dir = STATIC_DIR / 'blog' / str(detail_id).zfill(3)
+
+    for x in pic_dir.iterdir():
+        pic_filenames.append(Path('/', *x.parts[-2:]))
+
+    print(pic_filenames)
 
     context = {
                'blog_entry' : blog_entry,
+               'pic_filenames' : pic_filenames,
                }
                
     return render(request, 'minato/blog_detail.html', context)
