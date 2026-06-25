@@ -30,7 +30,7 @@ class BlogEntry(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_post')
     
     def __str__(self):
-        return '{}: {} - ID:{} - {} on {}'.format(self.created_on, self.last_modified, self.id, self.title, self.category)
+        return '{}: {} - ID:{} - {} on {}'.format(self.created_on, self.status, self.id, self.title, self.category)
 
 
 class CompanyName(models.Model):
@@ -70,8 +70,8 @@ class BookTrackerEntry(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=50)
     genre = models.CharField(max_length=50)
-    started_on = models.DateField(auto_now_add=False)
-    ended_on = models.DateField(auto_now_add=False)
+    started_on = models.DateField(auto_now_add=False, blank=True, null=True)
+    ended_on = models.DateField(auto_now_add=False, blank=True, null=True)
     status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
         
     def __str__(self):

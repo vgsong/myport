@@ -2,46 +2,42 @@
 {% load markdown_extras %}
 {% block content %}
 
+<div class="container">
+<div class="d-flex justify-content-start row col-12">
+  {% for book in books_all %}
+      <div class="card shadow-sm border-light mx-auto col-3 m-2">
+        <!-- Card Image / Header Hybrid -->
+        <div class="card-body p-4">
+          
+          <!-- Status & Genre Header -->
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="badge bg-light text-secondary border px-2 py-1 small fw-normal">{{ book.genre }}</span>
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill">{{ book.status }}</span>
+          </div>
 
+          <!-- Book Meta Data -->
+          <div class="mb-2">
+            <h5 class="card-title fw-bold text-dark mb-1">{{ book.title }}</h5>
+            <p class="card-text text-muted small mb-0">by <span class="fw-medium text-secondary">{{book.author}}</span></p>
+          </div>
 
-
-
-<div class="card shadow-sm border-light mx-auto" style="max-width: 400px; border-radius: 12px;">
-  <!-- Card Image / Header Hybrid -->
-  <div class="card-body p-4">
-    
-    <!-- Status & Genre Header -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <span class="badge bg-light text-secondary border px-2 py-1 small fw-normal">Sci-Fi / Cyberpunk</span>
-      <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill">Completed</span>
-    </div>
-
-    <!-- Book Meta Data -->
-    <div class="mb-4">
-      <h5 class="card-title fw-bold text-dark mb-1">The Matrix</h5>
-      <p class="card-text text-muted small mb-0">by <span class="fw-medium text-secondary">William Gibson</span></p>
-    </div>
-
-    <!-- Timeline Progress Section -->
-    <div class="bg-light p-3 rounded-3 border border-light-subtle">
-      <div class="row text-center g-0">
-        <!-- Started Date -->
-        <div class="col-6 border-end border-2">
-          <span class="text-uppercase text-muted d-block mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Started On</span>
-          <span class="fw-semibold text-dark small">Jan 05, 2026</span>
+          <!-- Timeline Progress Section -->
+      <!-- Compact Timeline Progress Section -->
+      <div class="d-flex flex-column gap-1 pt-2" style="font-size: 0.8rem;">
+        <div class="d-flex align-items-center">
+          <span class="text-uppercase text-secondary fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Started:</span>
+          <span class="text-dark">Jan 05, 2026</span>
         </div>
-        <!-- Ended Date -->
-        <div class="col-6">
-          <span class="text-uppercase text-muted d-block mb-1" style="font-size: 0.7rem; letter-spacing: 0.5px;">Ended On</span>
-          <span class="fw-semibold text-dark small">Feb 12, 2026</span>
+        <div class="d-flex align-items-center">
+          <span class="text-uppercase text-secondary fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Ended:</span>
+          <span class="text-dark">Feb 12, 2026</span>
         </div>
       </div>
     </div>
-
   </div>
+
+{% endfor %}
 </div>
-
-
-
+</div>
 
 {% endblock %}
