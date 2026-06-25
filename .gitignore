@@ -9,3 +9,4 @@ actvt.sh
 */.vscode/
 vsong/db.sqlite3
 vsong/.env
+.directory
