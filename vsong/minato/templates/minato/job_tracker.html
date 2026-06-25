@@ -9,8 +9,11 @@
     </div>
         
     <div class="d-flex flex-column flex-md-row gap-4">
+
         <div class="flex-grow-1 m-0">
+
         {% for applied in jobs_applied %}
+
             <div class="card shadow-sm h-10 w-75 m-2" >
                 <div class="card-body py-2 px-3">
 
@@ -20,8 +23,6 @@
                         </h5>   
 
                         <div class="">{{ applied.company }}</div>
-
-
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center small text-secondary">
@@ -46,21 +47,20 @@
             </div>
 
         {% endfor%}
+
         </div>
 
         <div class="flex-grow-1 m-0">
+
             <h5>Add New</h5>
             <div class="container">
                 <form method="POST">
-
                     {% csrf_token %}
-
                     {{ form.as_p }}
-
                     <button type="submit">Submit New Item</button>
-
                 </form>
             </div>
+
         </div>
 
     </div>

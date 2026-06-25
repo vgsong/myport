@@ -7,6 +7,8 @@ import numpy as np
 
 from dash import dcc, html
 from pathlib import Path
+from dotenv import load_dotenv
+
 
 from django.http import JsonResponse
 from django.shortcuts import render
@@ -19,8 +21,9 @@ from .forms import JobTrackerEntryForm
 import plotly.express as px
 import plotly.graph_objects as go
 
+load_dotenv()
 
-MDIR = Path('/home/vsong/DJANGO/vsong/minato/static/minato/data/')
+MDIR = Path(os.getenv('MDIR'))
 
 # ----- plotly constructors ----
 def coffeesales_chart():
