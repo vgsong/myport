@@ -30,7 +30,7 @@ class BlogEntry(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_post')
     
     def __str__(self):
-        return '{}: {} - {} on {}'.format(self.created_on, self.last_modified, self.title, self.category)
+        return '{}: {} - ID:{} - {} on {}'.format(self.created_on, self.last_modified, self.id, self.title, self.category)
 
 
 class CompanyName(models.Model):
@@ -59,18 +59,20 @@ class JobTrackerEntry(models.Model):
         return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)
 
 
-# class BookTrackerEntry(models.Model):
-#     STATUS_CHOICES = [
-#         ('WANT', 'want'),
-#         ('READING', 'reading'),
-#         ('FINISHED', 'finished'),
-#         ('GAVEUP', 'gaveup'),
-#     ]
+class BookTrackerEntry(models.Model):
+    STATUS_CHOICES = [
+        ('WANT', 'want'),
+        ('READING', 'reading'),
+        ('FINISHED', 'finished'),
+        ('GAVEUP', 'gaveup'),
+    ]
 
-#     title = models.CharField(max_length=100)
-#     author = models.CharField(max_length=50)
-#     started_on = modelsds.DateField(auto_now_add=False)
-#     status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=50)
+    genre = models.CharField(max_length=50)
+    started_on = models.DateField(auto_now_add=False)
+    ended_on = models.DateField(auto_now_add=False)
+    status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
         
-#     def __str__(self):
-#         return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)n n8
+    def __str__(self):
+        return '{}: {} - {} - STATUS: {}'.format(self.started_on, self.author, self.title, self.status)

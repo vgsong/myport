@@ -15,6 +15,20 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'profexp' %}">ProfExp</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'reading' %}">Reading</a>
+        </li>
+
+
+        {% if request.user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+        </li>
+
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
@@ -25,14 +39,8 @@
             <li><a class="dropdown-item" href="{% url 'jquery_learn' %}">JS/JQUERY Learn</a></li>
           </ul>
         </li>
-        {% if request.user.is_authenticated %}
 
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-        </li>
+        
         {% endif %}
       </ul>
     </div>

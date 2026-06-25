@@ -15,7 +15,7 @@ from django_plotly_dash import DjangoDash
 from django.templatetags.static import static
 from django.conf import settings
 
-from .models import BlogEntry, JobTrackerEntry
+from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry
 from .forms import JobTrackerEntryForm
 
 import plotly.express as px
@@ -274,5 +274,16 @@ def update_item_status(request):
 
 def profexp(request):
     return render(request, 'minato/profexp.html')
+
+def reading(request):
+
+    books_all = BookTrackerEntry.objects.all()
+
+    context = {
+        'books_all' : books_all,
+    }
+
+    return render(request, 'minato/reading.html', context)
+
 
 

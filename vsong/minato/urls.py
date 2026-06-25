@@ -10,6 +10,7 @@ urlpatterns= [
     path('coffee_shop/', views.coffee_shop, name='coffee_shop'),
     path('jquery_learn/', views.jquery_learn, name='jquery_learn'),
     path('job_tracker/', views.job_tracker, name='job_tracker'),
+    path('reading/', views.reading, name='reading'),
     path('update_item_status/', views.update_item_status, name='update_item_status'),
 
 ]
