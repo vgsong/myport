@@ -14,6 +14,7 @@ from django.shortcuts import render
 from django_plotly_dash import DjangoDash
 from django.templatetags.static import static
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
 
 from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry
 from .forms import JobTrackerEntryForm
@@ -167,6 +168,9 @@ def coffeesales_chart():
 
 #     return
 
+
+
+
 #  ----- main views -----------------------
 
 
@@ -181,7 +185,7 @@ def index(request):
 
     return render(request, 'minato/index.html', context)
 
-
+@login_required
 def coffee_shop(request):
     coffeesales_chart()
     # dropdown_chart()
@@ -190,8 +194,6 @@ def coffee_shop(request):
     # twodrop_chart()
 
     return render(request, 'minato/coffee_shop.html')
-
-
 
 
 # ----- blog views --------------------------
@@ -204,7 +206,6 @@ def blog(request):
               }
 
     return render(request, 'minato/blog.html', context)
-
 
 def blog_detail(request, detail_id):
     blog_entry = BlogEntry.objects.get(pk=int(detail_id))
@@ -223,6 +224,7 @@ def blog_detail(request, detail_id):
                
     return render(request, 'minato/blog_detail.html', context)
 
+@login_required
 def jquery_learn(request):
 
     with open(os.path.join(MDIR, 'json_table_pract.csv'), 'r', encoding='utf-8-sig') as cf:
@@ -242,7 +244,7 @@ def jquery_learn(request):
         }
     return render(request, 'minato/jquery_learn.html', context)
 
-
+@login_required
 def job_tracker(request):
 
     applied_cat = [x[0] for x in JobTrackerEntry.STATUS_CHOICES]
@@ -257,7 +259,7 @@ def job_tracker(request):
 
     return render(request, 'minato/job_tracker.html', context)
 
-
+@login_required
 def update_item_status(request):
     if request.method == 'POST':
         

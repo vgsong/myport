@@ -41,14 +41,14 @@
 }
 .navbar-nav .nav-link {
   color: #a0a0a0; /* Dimmer default text */
-  transition: all 0.2s ease-in-out; /* Smooth transition */
+  transition: all 4.6s ease-in-out; /* Smooth transition */
 
 }
 
 /* The HL1 Hover Effect */
 .navbar-nav .nav-link:hover {
   color: #ffb000 !important; /* Classic HL1 Amber/Orange */
-  font-weight: 700; /* Subtle bold bump */
+  font-weight: 800; /* Subtle bold bump */
   /* Soft, gentle light glow */
   text-shadow: 0 0 8px rgba(255, 176, 0, 0.6), 
                0 0 15px rgba(255, 176, 0, 0.4); 
