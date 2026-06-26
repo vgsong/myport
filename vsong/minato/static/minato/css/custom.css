@@ -1,64 +1,22 @@
-/* 1. Set your custom primary color globally */
-:root {
-  --bs-primary: #2d6a4f;
-  --bs-primary-rgb: 45, 106, 79;
-}
+/* Modifies Bootstrap's built-in dark theme */
+[data-bs-theme="dark"] {
+  /* Global Accent Overrides */
+  --bs-primary: #2e6f40;          /* Forest dark green primary color */
+  --bs-primary-rgb: 46, 111, 64;
+  --bs-link-color: #4e8760;       /* Lighter green for links */
+  --bs-link-hover-color: #7fa98c;
 
-/* 2. Define the background and text for your custom theme */
-[data-bs-theme="forest-dark"] {
-  color-scheme: dark;
+  /* Target all headings (h1 to h6) and text accent helpers */
+  h1, h2, h3, h4, h5, h6, 
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    color: #4e8760 !important;    /* Accessible, readable accent green */
+  }
 
-  /* Main background and main text */
-  --bs-body-bg: #0b1410;       
-  --bs-body-color: #e1eae6;    
-  --bs-body-bg-rgb: 11, 20, 16;
-
-  /* Card and sidebar background surfaces */
-  --bs-tertiary-bg: #14241d;   
-  --bs-border-color: #233d32;  
-
-  /* Secondary/Muted text colors */
-  --bs-secondary-color: #94aba0;
-  --bs-heading-color: #e1eae6;
-}
-
-.timeline {
-  border-left: 4px solid hsl(0, 0%, 0%);
-  position: relative;
-  list-style: none;
-}
-
-.timeline .timeline-item {
-  position: relative;
-}
-
-.timeline .timeline-item:after {
-  position: absolute;
-  display: block;
-  top: 0;
-}
-
-.timeline .timeline-item:after {
-  background-color: hsl(0, 0%, 0%);
-  left: -38px;
-  border-radius: 50%;
-  height: 11px;
-  width: 11px;
-  content: "";
-}
-
-
-/* 1. Prevents the image from spilling out of its borders when it expands */
-.img-hover-container {
-  overflow: hidden; 
-}
-
-/* 2. Adds the smooth animation settings to the image */
-.img-hover-container img {
-  transition: transform 0.3s ease-in-out;
-}
-
-/* 3. Scales the image up slightly (5%) on hover */
-.img-hover-container:hover img {
-  transform: scale(1.05); 
+  /* Target horizontal rules (<hr>) */
+  hr, .dropdown-divider {
+    color: #2e6f40 !important;    /* Dark green line base color */
+    border-color: #2e6f40 !important;
+    opacity: 0.6;                 /* Slightly vibrant line visibility */
+  }
 }
