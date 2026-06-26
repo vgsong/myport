@@ -11,6 +11,7 @@ urlpatterns= [
     path('jquery_learn/', views.jquery_learn, name='jquery_learn'),
     path('job_tracker/', views.job_tracker, name='job_tracker'),
     path('reading/', views.reading, name='reading'),
+    path('excel_blog/', views.excel_blog, name='excel_blog'),
     path('update_item_status/', views.update_item_status, name='update_item_status'),
 
 ]

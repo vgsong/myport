@@ -15,10 +15,10 @@
 
   /* Target horizontal rules (<hr>) */
   hr, .dropdown-divider {
-    color: #2e6f40 !important;    /* Dark green line base color */
-    border-color: #006400 !important;
+    color: #ffb000 !important;    /* Dark green line base color */
+    border-color: #ffb000 !important;
     opacity: 0.6;     
-    background-color: #2e6f40;            /* Slightly vibrant line visibility */
+    background-color: #ffb000;            /* Slightly vibrant line visibility */
   }
 
 /* .navbar {

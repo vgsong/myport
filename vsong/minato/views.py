@@ -178,7 +178,7 @@ def index(request):
     
     recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
 
-    
+
 
     context = {
             'username' : 'vgs',
@@ -226,6 +226,16 @@ def blog_detail(request, detail_id):
                }
                
     return render(request, 'minato/blog_detail.html', context)
+
+def excel_blog(request):
+
+
+    context = {
+
+              }
+
+    return render(request, 'minato/excel_blog.html', context)
+
 
 @login_required
 def jquery_learn(request):
