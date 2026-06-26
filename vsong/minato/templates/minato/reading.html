@@ -12,7 +12,12 @@
           <!-- Status & Genre Header -->
           <div class="d-flex justify-content-between align-items-center mb-3">
             <span class="badge bg-light text-secondary border px-2 py-1 small fw-normal">{{ book.genre }}</span>
+            {% if book.status == 'FINISHED'%}
             <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1 rounded-pill">{{ book.status }}</span>
+            {% else %}
+            <span class="badge bg-warning-subtle text-success border border-success-subtle px-2 py-1 rounded-pill">{{ book.status }}</span>
+            {% endif %}
+
           </div>
 
           <!-- Book Meta Data -->

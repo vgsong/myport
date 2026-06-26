@@ -32,7 +32,7 @@ DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 
-# Application definition
+# Application definitions
 
 INSTALLED_APPS = [
     'minato.apps.MinatoConfig',
@@ -161,7 +161,6 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-
 
 # Absolute filesystem path to the directory that will hold user-uploaded files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
