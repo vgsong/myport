@@ -16,10 +16,46 @@
   /* Target horizontal rules (<hr>) */
   hr, .dropdown-divider {
     color: #2e6f40 !important;    /* Dark green line base color */
-    border-color: #2e6f40 !important;
+    border-color: #006400 !important;
     opacity: 0.6;     
     background-color: #2e6f40;            /* Slightly vibrant line visibility */
   }
+
+/* .navbar {
+    border-bottom: 2px solid #004d00 !important; 
+
+    } */
+@keyframes slowGlow {
+    0% {
+        box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
+        border-color: #004d00 !important;
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(0, 100, 0, 0.9); /* Peak brightness */
+        border-color: #00ff00 !important; /* Brighter accent during pulse */
+    }
+    100% {
+        box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
+        border-color: #004d00 !important;
+    }
+}
+.navbar-nav .nav-link {
+  color: #a0a0a0; /* Dimmer default text */
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+
+}
+
+/* The HL1 Hover Effect */
+.navbar-nav .nav-link:hover {
+  color: #ffb000 !important; /* Classic HL1 Amber/Orange */
+  font-weight: 700; /* Subtle bold bump */
+  /* Soft, gentle light glow */
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.6), 
+               0 0 15px rgba(255, 176, 0, 0.4); 
+  animation: slowGlow 15s infinite ease-in-out; 
+  transition: ease-in-out;
+}
+
 
 
   /* --- Target ALL Cards --- */
