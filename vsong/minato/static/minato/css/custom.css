@@ -17,6 +17,31 @@
   hr, .dropdown-divider {
     color: #2e6f40 !important;    /* Dark green line base color */
     border-color: #2e6f40 !important;
-    opacity: 0.6;                 /* Slightly vibrant line visibility */
+    opacity: 0.6;     
+    background-color: #2e6f40;            /* Slightly vibrant line visibility */
   }
+
+
+  /* --- Target ALL Cards --- */
+  .card {
+    background-color: #121e15 !important;    /* Very deep forest card background */
+    border-color: #13fb49 !important;        /* Dark green card border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle depth shadow */
+  }
+
+  /* Target headers specifically inside cards */
+  .card-header {
+    background-color: #18281c !important;    /* Slightly lighter green header tint */
+    border-bottom: 1px solid #233c29 !important;
+    color: #8fae95 !important;               /* Lighter sage accent for header text */
+  }
+
+  /* Target footers specifically inside cards */
+  .card-footer {
+    background-color: #18281c !important;
+    border-top: 1px solid #233c29 !important;
+    color: #a3b8a8 !important;               /* Muted text for footer metrics/dates */
+  }
+
+
 }

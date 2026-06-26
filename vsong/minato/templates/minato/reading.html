@@ -2,10 +2,10 @@
 {% load markdown_extras %}
 {% block content %}
 
-<div class="container">
-<div class="d-flex justify-content-start row col-12">
+<div class="container" >
+<div class="d-flex justify-content-start row col-12 gap-0">
   {% for book in books_all %}
-      <div class="card shadow-sm border-light mx-auto col-3 m-2">
+      <div class="card shadow-sm border mx-auto col-3 m-2" >
         <!-- Card Image / Header Hybrid -->
         <div class="card-body p-4">
           
@@ -22,7 +22,7 @@
 
           <!-- Book Meta Data -->
           <div class="mb-2">
-            <h5 class="card-title fw-bold text-dark mb-1">{{ book.title }}</h5>
+            <h5 class="card-title fw-bold text mb-1">{{ book.title }}</h5>
             <p class="card-text text-muted small mb-0">by <span class="fw-medium text-secondary">{{book.author}}</span></p>
           </div>
 
@@ -30,12 +30,12 @@
       <!-- Compact Timeline Progress Section -->
       <div class="d-flex flex-column gap-1 pt-2" style="font-size: 0.8rem;">
         <div class="d-flex align-items-center">
-          <span class="text-uppercase text-secondary fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Started:</span>
-          <span class="text-dark">Jan 05, 2026</span>
+          <span class="text-uppercase text fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Started:</span>
+          <span class="text">Jan 05, 2026</span>
         </div>
         <div class="d-flex align-items-center">
-          <span class="text-uppercase text-secondary fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Ended:</span>
-          <span class="text-dark">Feb 12, 2026</span>
+          <span class="text-uppercase text fw-semibold text-muted me-2" style="font-size: 0.65rem; letter-spacing: 0.5px; min-width: 55px;">Ended:</span>
+          <span class="text">Feb 12, 2026</span>
         </div>
       </div>
     </div>
