@@ -177,6 +177,9 @@ def coffeesales_chart():
 def index(request):
     
     recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
+
+    
+
     context = {
             'username' : 'vgs',
             'recent_posts' : recent_posts[:7],
