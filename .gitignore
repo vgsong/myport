@@ -1,12 +1,21 @@
+# --- Environment / Dependencies ---
 .venv/
-kazusong/
-**/__pycache__/
-*.pyc
-/brs.sh
-brs.sh
-actvt.sh
+
+# --- IDEs / Editors ---
 .vscode/
 */.vscode/
-vsong/db.sqlite3
-vsong/.env
+
+# --- Operating System ---
 .directory
+
+# --- Python Cache ---
+*.pyc
+**/__pycache__/
+
+# --- Scripts ---
+actvt.sh
+brs.sh
+
+# --- Project / App Specific ---
+vsong/.env
+vsong/db.sqlite3
