@@ -8,7 +8,10 @@ from .models import GuestBookEntry
 
 
 # Register your models here.
-admin.site.register(BlogEntry)
+@admin.register(BlogEntry)
+class BlogEntryAdmin(admin.ModelAdmin):
+    list_filter = ('status', 'created_on') 
+
 admin.site.register(BlogCategory)
 admin.site.register(JobTrackerEntry)
 admin.site.register(CompanyName)

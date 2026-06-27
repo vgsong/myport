@@ -1,0 +1,48 @@
+{% extends 'minato/main/base.html' %}
+{% block content %}
+
+ <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h3 class="card-title text-center mb-4">Get in Touch</h3>
+                        
+                        <!-- Contact Form -->
+                        <form action="YOUR_FORM_ENDPOINT_URL" method="POST">
+                                                
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    <!-- Renders the field label with an automatic Bootstrap class -->
+                                    <label for="{{ field.id_for_label }}" class="form-label">
+                                        {{ field.label }}
+                                    </label>
+                                    
+                                    <!-- Renders the actual HTML input tag (<input>, <textarea>, etc.) -->
+                                    {{ field }}
+
+                                    <!-- Displays backend validation errors if any occur -->
+                                    {% if field.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ field.errors|striptags }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% endfor %}
+                            
+                            <!-- Submit Button -->
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+        
+    <hr> 
+
+{% endblock %}

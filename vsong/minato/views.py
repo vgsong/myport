@@ -17,7 +17,7 @@ from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
 from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry
-from .forms import JobTrackerEntryForm
+from .forms import JobTrackerEntryForm, GuestBookForm
 
 import plotly.express as px
 import plotly.graph_objects as go
@@ -286,6 +286,17 @@ def update_item_status(request):
 
         return JsonResponse({'success' : True})
     return JsonResponse({'success' : False}, status=400)
+
+
+def contact(request):
+
+    
+
+    context = {
+        'form': GuestBookForm(),
+    }
+
+    return render(request, 'minato/contact.html', context)
 
 def profexp(request):
     return render(request, 'minato/profexp.html')

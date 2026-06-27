@@ -3,36 +3,35 @@
 {% load static %}
 {% load django_bootstrap5 %}
 
-
 <html data-bs-theme="dark">
 
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="{% static 'minato/assets/general/favicon.png'%}">
-        <!-- <script src="{% static 'minato/js/jquery-3.7.1.min.js' %}"></script> -->
+
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
      
         {% bootstrap_css %}
 
         <link rel="stylesheet" href="{% static 'minato/css/custom.css' %}">
-        <!-- <link rel="stylesheet" href="{% static 'minato/css/style.css' %}">            -->
-         
+
     </head>
-        
+    
     <body class="m-3 border-3 border-dark shadow-lg rounded">
 
         {% include 'minato/main/navbar.html' %}
 
         <div class="d-flex flex-row bd-highlight p-2">
-
             <div class="bd-highlight col-12 p-2">
                     
                 {% block content %}
                 {% endblock %}
                 
             </div>
-
         </div>
         
     </body>
+    
         {% bootstrap_javascript %}
+
 </html>
