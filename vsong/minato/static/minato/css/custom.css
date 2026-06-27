@@ -21,10 +21,7 @@
     background-color: #ffb000;            /* Slightly vibrant line visibility */
   }
 
-/* .navbar {
-    border-bottom: 2px solid #004d00 !important; 
 
-    } */
 @keyframes slowGlow {
     0% {
         box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
@@ -56,6 +53,18 @@
   transition: ease-in-out;
 }
 
+yumeIcon{
+  transition: ease-in-out;
+}
 
+yumeIcon:hover{
+  color: #ffb000 !important; /* Classic HL1 Amber/Orange */
+  font-weight: 800; /* Subtle bold bump */
+  /* Soft, gentle light glow */
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.6), 
+               0 0 15px rgba(255, 176, 0, 0.4); 
+  animation: slowGlow 15s infinite ease-in-out; 
+  transition: ease-in-out;
+}
 
 }
