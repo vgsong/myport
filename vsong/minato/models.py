@@ -62,7 +62,7 @@ class JobTrackerEntry(models.Model):
 class GuestBookEntry(models.Model):
     name = models.CharField(max_length=20)
     email_contact = models.EmailField(max_length=254)
-    message = models.TextField()
+    message = models.TextField() 
 
     def __str__(self):
         return '{}: {} - {} - STATUS: {}'.format(self.name, self.email_contact)
