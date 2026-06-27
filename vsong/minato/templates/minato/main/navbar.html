@@ -1,11 +1,16 @@
 <nav class="navbar navbar-expand-md bg-dark m-2 border-bottom border-3 d-flex justify-content-between">
 
   <div class="container-fluid d-flex justify-content-between">
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
+
       <ul class="navbar-nav">
+
+        <!-- public navlinks -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
         </li>
@@ -19,33 +24,36 @@
           <a class="nav-link" href="{% url 'reading' %}">Reading</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'excel_blog' %}">xlBlog</a>
+          <a class="nav-link" href="{% url 'excel_blog' %}">Excel</a>
         </li>
-
+        <!-- navlinks ommitted/WIP -->
         {% if request.user.is_authenticated %}
 
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+          </li>
 
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            Dashboard
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{% url 'coffee_shop' %}">Coffee Shop</a></li>
-            <li><a class="dropdown-item" href="{% url 'jquery_learn' %}">JS/JQUERY Learn</a></li>
-          </ul>
-        </li>
+          <!-- navlink with submenu -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              Dashboard
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{% url 'coffee_shop' %}">Coffee Shop</a></li>
+              <li><a class="dropdown-item" href="{% url 'jquery_learn' %}">JS/JQUERY Learn</a></li>
+            </ul>
+          </li>
 
-        
         {% endif %}
+
       </ul>
+
     </div>
+        <span><strong>夢</strong></span>
   </div>
   
 

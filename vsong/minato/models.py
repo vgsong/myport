@@ -59,6 +59,10 @@ class JobTrackerEntry(models.Model):
         return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)
 
 
+class GuestBookEntry(models.Model):
+    name = models.CharField(max_length=20)
+    email_contact = models.CharField(max_length=20)
+
 class BookTrackerEntry(models.Model):
     STATUS_CHOICES = [
         ('WANT', 'want'),
