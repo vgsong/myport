@@ -288,15 +288,14 @@ def update_item_status(request):
     return JsonResponse({'success' : False}, status=400)
 
 
-def contact(request):
+def about(request):
 
-    
 
     context = {
         'form': GuestBookForm(),
     }
 
-    return render(request, 'minato/contact.html', context)
+    return render(request, 'minato/about.html', context)
 
 def profexp(request):
     return render(request, 'minato/profexp.html')

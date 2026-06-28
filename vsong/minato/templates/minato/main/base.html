@@ -6,7 +6,8 @@
 <html data-bs-theme="dark">
 
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="icon" href="{% static 'minato/assets/general/favicon.png'%}">
 
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
@@ -21,7 +22,7 @@
 
         {% include 'minato/main/navbar.html' %}
 
-        <div class="d-flex flex-row bd-highlight p-2">
+        <div class="d-flex flex-row bd-highlight p-2 mt-0 mb-0">
             <div class="bd-highlight col-12 p-2">
                     
                 {% block content %}
