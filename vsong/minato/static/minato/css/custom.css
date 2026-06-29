@@ -5,8 +5,8 @@
   --bs-primary-rgb: 46, 111, 64;
   --bs-link-color: #4e8760;       /* Lighter green for links */
   --bs-link-hover-color: #7fa98c;
-  --bs-body-color: #1C1B1A !important;
-  --bs-body-bg: #1C1B1A !important;
+  /* --bs-body-color: #1C1B1A !important; */
+  /* --bs-body-bg: #1C1B1A !important; */
   /* Target all headings (h1 to h6) and text accent helpers */
   h1, h2, h3, h4, h5, h6, 
   .h1, .h2, .h3, .h4, .h5, .h6,
@@ -54,11 +54,11 @@
   transition: ease-in-out;
 }
 
-yumeIcon{
+#yumeIcon{
   transition: ease-in-out;
 }
 
-yumeIcon:hover{
+#yumeIcon:hover{
   color: #ffb000 !important; /* Classic HL1 Amber/Orange */
   font-weight: 800; /* Subtle bold bump */
   /* Soft, gentle light glow */
