@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_bootstrap5',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
-    # 'compressor',
+    'compressor',
     'django_ckeditor_5',
 ]
 
