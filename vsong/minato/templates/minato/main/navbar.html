@@ -1,66 +1,42 @@
-<nav class="navbar navbar-expand-md bg-dark m-2 border-bottom border-3 d-flex justify-content-between">
+<nav class="navbar bg-dark m-2 border-bottom border-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
 
-  <div class="container-fluid d-flex justify-content-between">
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- ADDED: 'custom-popup-menu' class here -->
+    <div class="offcanvas offcanvas-start bg-dark text-light custom-popup-menu" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      
+      <div class="offcanvas-header border-bottom border-secondary">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Navigation</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
 
-      <ul class="navbar-nav">
-
-        <!-- public navlinks -->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog' %}">NOTEBOOK</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="{% url 'profexp' %}">ProfExp</a>
-        </li> -->
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="{% url 'reading' %}">Reading</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'excel_blog' %}">EXCEL</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
-        </li>
-        
-        <!-- navlinks ommitted/WIP -->
-        {% if request.user.is_authenticated %}
-<!-- 
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'job_tracker' %}">Jobs</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">HOME</a>
           </li>
-
-
-          <!-- navlink with submenu -->
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Dashboard
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'coffee_shop' %}">Coffee Shop</a></li>
-              <li><a class="dropdown-item" href="{% url 'jquery_learn' %}">JS/JQUERY Learn</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">NOTEBOOK</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="{% url 'excel_blog' %}">EXCEL</a>
           </li> -->
-
-        {% endif %}
-
-      </ul>
-
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">ABOUT</a>
+          </li>
+          
+          {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
     </div>
-        <span id="#yumeIcon"><strong>夢</strong></span>
+
+    <span id="yumeIcon" class="text-light"><strong>夢</strong></span>
   </div>
-  
-
-
 </nav>
