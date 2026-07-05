@@ -84,6 +84,7 @@ class BookTrackerEntry(models.Model):
     started_on = models.DateField(auto_now_add=False, blank=True, null=True)
     ended_on = models.DateField(auto_now_add=False, blank=True, null=True)
     status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
+    iken = models.TextField()
         
     def __str__(self):
         return '{}: {} - {} - STATUS: {}'.format(self.started_on, self.author, self.title, self.status)

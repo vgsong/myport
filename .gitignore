@@ -14,8 +14,7 @@ backup/
 **/__pycache__/
 
 # --- Scripts ---
-actvt.sh
-brs.sh
+start.sh
 
 # --- Project / App Specific ---
 vsong/.env
