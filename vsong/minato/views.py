@@ -38,12 +38,12 @@ def coffeesales_chart():
     df['transaction_date'] = pd.to_datetime(df['transaction_date'])
     sales_cat = df.groupby('product_category')['transaction_qty'].sum()
 
-    print(df)
+    # print(df)
 
     
     sales_cat = sales_cat.to_dict()
 
-    print(sales_cat.keys())
+    # print(sales_cat.keys())
 
     app = DjangoDash('coffee_salescat')
 
