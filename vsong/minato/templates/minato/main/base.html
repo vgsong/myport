@@ -3,9 +3,10 @@
 {% load static %}
 {% load django_bootstrap5 %}
 
-<html data-bs-theme="dark">
+<html data-bs-theme="">
 
     <head>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="icon" href="{% static 'minato/assets/general/favicon.png'%}">
@@ -23,20 +24,17 @@
         {% include 'minato/main/navbar.html' %}
 
         <div class="d-flex flex-row bd-highlight m-4">
+
             <div class="bd-highlight col-12 ">
                     
                 {% block content %}
                 {% endblock %}
                 
             </div>
-
     
         </div>
 
     </body>
-
-    
-
 
         {% bootstrap_javascript %}
 
