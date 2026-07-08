@@ -7,8 +7,7 @@ from django.conf import settings
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=100)
-
-
+    
     def __str__(self):
         return self.name
     
@@ -68,8 +67,6 @@ class GuestBookEntry(models.Model):
         return '{}: {} - {} - STATUS: {}'.format(self.name, self.email_contact)
 
 
-
-
 class BookTrackerEntry(models.Model):
     STATUS_CHOICES = [
         ('WANT', 'want'),
@@ -85,6 +82,7 @@ class BookTrackerEntry(models.Model):
     ended_on = models.DateField(auto_now_add=False, blank=True, null=True)
     status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
     iken = models.TextField()
+
         
     def __str__(self):
-        return '{}: {} - {} - STATUS: {}'.format(self.started_on, self.author, self.title, self.status)
+        return '{}: {} - {} - STATUS: {}'.format(self.started_on, self.id, self.title, self.status)

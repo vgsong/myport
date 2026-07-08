@@ -178,8 +178,6 @@ def index(request):
     
     recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
 
-
-
     context = {
             'username' : 'vgs',
             'recent_posts' : recent_posts[:7],
@@ -303,6 +301,9 @@ def profexp(request):
 def reading(request):
 
     books_all = BookTrackerEntry.objects.all()
+
+
+
 
     context = {
         'books_all' : books_all,

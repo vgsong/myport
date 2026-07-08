@@ -12,6 +12,12 @@ from .models import GuestBookEntry
 class BlogEntryAdmin(admin.ModelAdmin):
     list_filter = ('status', 'created_on') 
 
+# @admin.register(BookTrackerEntry)
+# class BookTrackerEntryAdmin(admin.ModelAdmin):
+#     list_filter = ('status', 'started_on') 
+
+
+
 admin.site.register(BlogCategory)
 admin.site.register(JobTrackerEntry)
 admin.site.register(CompanyName)
