@@ -75,6 +75,13 @@
   transition: ease-in-out;
 }
 
+#navbar-floating{
+  position: fixed;
+  top: 20px; /* Distance from the bottom */
+  left: 20px;  /* Distance from the right */
+  z-index: 1050; /* Ensures it stays above other content */
+}
+
 /* Shrunk overlay popup */
 .offcanvas.custom-popup-menu {
   /* Restrict the dimensions so it doesn't take over the screen */
