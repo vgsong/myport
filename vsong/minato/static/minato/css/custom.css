@@ -87,8 +87,6 @@
 .navbar-toggler{
   color: #ffb000;
 
-
-
 }
 
 .navbar-toggler:hover{
@@ -97,10 +95,18 @@
   transition: 0.1s;
   border:2px;
 
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow:none;
 
 }
 
-/* Shrunk overlay popup */
+
+
+
+/* for blog entry Shrunk overlay popup */
 .offcanvas.custom-popup-menu {
   /* Restrict the dimensions so it doesn't take over the screen */
   max-width: 200px; 
