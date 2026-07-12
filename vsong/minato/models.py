@@ -29,7 +29,7 @@ class BlogEntry(models.Model):
     category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_post')
     
     def __str__(self):
-        return '{}: {} - ID:{} - {} on {}'.format(self.created_on, self.status, self.id, self.title, self.category)
+        return '{}: {} - ID:{} - {}'.format(self.category, self.status, self.id, self.title)
 
 
 class CompanyName(models.Model):

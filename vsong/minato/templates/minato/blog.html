@@ -2,8 +2,26 @@
 {% block content %}
 
 
-    <div class="container p-5">
+    <div class="container-fluid d-flex flex-row mt-5 p-2 justify-content-md-center">
 
+        <div class="row col-4">
+        <h5>Filter By</h5>
+        CAT
+        <ul>
+            <li>Daily</li>
+            <li>Linux</li>
+        </ul>
+
+        YEAR
+        <ul>
+            <li>2026</li>
+            <li>2025</li>
+        </ul>
+
+
+        </div>
+
+        <div class="row col-8">
         <h2><strong>From my Apt Window</strong></h2>
 
         {% for entry in recent_posts %}
@@ -16,11 +34,9 @@
             </ul>
 
         {% endfor%}
-        
+        </div>
+
     </div>
-        
-
-
 
 
     

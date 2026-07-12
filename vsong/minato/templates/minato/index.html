@@ -10,7 +10,7 @@
 
   <div class="container-fluid py-2 mb-0 ">
     <div class="row align-items-center g-4">
-      
+
       <!-- Profile Picture Column -->
       <div class="col-12 col-md-auto text-center text-md-start">
         <img src="{% static 'minato/assets/main-portrait.png'%}" 
@@ -20,18 +20,13 @@
       </div>
 
       <!-- Introduction Text Column -->
+       
       <div class="col-12 col-md text-center text-md-start">
-        <!-- <h4>庭</h4> -->
+        <h3>マイハブ </h3>
         <p class="fs-6 text-muted mb-2">Data/ERP System Analyst</p>
-
-
-        <!-- <p class="col-md-10 fs-6 text-secondary mb-1">
-          Started in public accounting. Shifted to Data/ERP System Analyst because I enjoy cleaning data and automating repetitive processeses. Excel, VBA, and Python help me put the daily bread on the table.
-        </p> -->
         <p class="col-md-10 fs-6 text-secondary mb-1">
-          <p>I am Victor Song -- Welcome to my webgarden</p>
-          Reading and programming are my hobbies. I love working with excel templates and automating repetitive processes. Excel, VBA, and Python put the daily bread on my table.
-        </p>
+        <p>I am Victor Song -- Welcome to my webgarden</p>
+        <p>Reading and programming are my hobbies. I love working with excel templates and automating repetitive processes. Excel, VBA, and Python put the daily bread on my table.</p>
         <p>My front-end skills are lacking. LLM was used to generate bootstrap snippets, not entire pages. For Django back-end, LLM was used as reference and learning purposes.</p>
       </div>
 
@@ -50,34 +45,38 @@
         <a href="" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
           <img src="{% static 'minato/assets/general/email_icon.png' %}" alt="about" style="width: 20px; height: 20px; object-fit: contain;">
         </a>
-
-        <!-- Aboutme Link -->
-        <!-- <a href="{% url 'about' %}" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
-          <img src="{% static 'minato/assets/general/aboutme_icon.png' %}" alt="about" style="width: 20px; height: 20px; object-fit: contain;">
-        </a> -->
-
       </div>
 
     </div>
+
+  <div class="container">
+ <div class="row container-fluid  m-4 row-md-15">
+    <h5>Right Now</h5>
+    <ul>
+      <li><strong>Reading: </strong>Confederacy of Dunces</li>
+      <li><strong>Watching: </strong>na</li>
+      <li><strong>Gaming: </strong>Underrail</li>
+      <li><strong>Listening: </strong>slowpace</li>
+    </ul>
+  </div>
+
+  <div class="row container-fluid  m-4 row-md-15">
+    <h5>To do/WIP learning/projects</h5>
+    <ul>
+      <li>Plotly -- WIP</li>
+      <li>Blog website -- done/WIP</li>
+      <li>Book Tracker -- WIP</li>
+      <li>create a github rep -- done 6/18</li>
+      <li>sync a github rep with pythonanywhere -- done 6/18</li>
+      <li>deploy django project -- done 6/28</li>
+      <li>About me session -- WIP</li>
+      <li>Blog Entry Filter -- WIP</li>
+    </ul>
+  </div>
   </div>
 
 
-  
-  <div class="container-fluid m-4">
-
-        <h5>To do/WIP learning/projects</h5>
-        <ul>
-            <li>Plotly -- WIP</li>
-            <li>Blog website -- done/WIP</li>
-            <li>Book Tracker -- WIP</li>
-            <li>create a github rep -- done 6/18</li>
-            <li>sync a github rep with pythonanywhere -- done 6/18</li>
-            <li>deploy django project -- done 6/28</li>
-            <li>About me session -- WIP</li>
-        </ul>
-    </div>
-
-
+  </div>
 
 </div>
 
@@ -101,6 +100,7 @@
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
         
         <div class="container m-2">
+          <p>Recent posts</p>
           <div class="pt-3 pt-0 ">
           {% for entry in recent_posts %}
             <ul class="list-group list-group-flush bg-transparent">
@@ -183,7 +183,7 @@
             </tbody>
           </table>
           <div class="container text-center p-3">
-            <a href="{% static 'minato/assets/general/VS MAIN_26.pdf'%}" target="_blank"><strong>Resume</strong></a>
+            <a href="{% static 'minato/assets/general/VS MAIN_26.pdf'%}" target="_blank"><strong>Full Resume</strong></a>
           </div>
         </div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
@@ -191,6 +191,6 @@
   </div>
   </div>
   </div>
-
+</div>
 
 {% endblock %}
