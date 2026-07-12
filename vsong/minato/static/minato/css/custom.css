@@ -80,6 +80,24 @@
   top: 20px; /* Distance from the bottom */
   left: 20px;  /* Distance from the right */
   z-index: 1050; /* Ensures it stays above other content */
+  margin:0px;
+  padding:0px;
+}
+
+.navbar-toggler{
+  color: #ffb000;
+
+
+
+}
+
+.navbar-toggler:hover{
+  background-color: #ffb000;
+  transform: rotate(180deg);
+  transition: 0.1s;
+  border:2px;
+
+
 }
 
 /* Shrunk overlay popup */
