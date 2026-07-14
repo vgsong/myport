@@ -82,8 +82,8 @@
 
 #navbar-floating{
   position: fixed;
-  top: 20px; /* Distance from the bottom */
-  left: 20px;  /* Distance from the right */
+  top: 15px; /* Distance from the bottom */
+  left: 15px;  /* Distance from the right */
   z-index: 1050; /* Ensures it stays above other content */
   margin:0px;
   padding:0px;
@@ -132,6 +132,10 @@
 /* Subtle styling touch to dim the page background behind our popup window */
 .offcanvas-backdrop {
   opacity: 0.4 !important;
+}
+
+#footerFont {
+  font-size: x-small;
 }
 
 }

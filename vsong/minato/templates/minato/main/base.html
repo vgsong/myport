@@ -8,13 +8,9 @@
     <head>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <link rel="icon" href="{% static 'minato/assets/general/favicon.png'%}">
-
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
-     
         {% bootstrap_css %}
-
         <link rel="stylesheet" href="{% static 'minato/css/custom.css' %}">
 
     </head>
@@ -24,9 +20,9 @@
 
         {% include 'minato/main/navbar.html' %}
 
-        <div class="d-flex flex-row bd-highlight mt-3 p-3">
+        <div class="d-flex flex-row bd-highlight mt-1 p-0 p-md-3">
 
-            <div class="bd-highlight col-10">
+            <div class="bd-highlight col-12">
                     
                 {% block content %}
                 {% endblock %}
@@ -34,6 +30,14 @@
             </div>
     
         </div>
+        <div class="container d-flex p-2 m-0 border-2 justify-content-center">
+            <div class="text-center">
+                <p class="m-0 p-0 fw-light" id="footerFont">©vgsong | Last updated: MM/DD/YYYY</p>
+                <p class="m-0 p-0 fw-light" id="footerFont">Website Powered by Django!</p>
+            </div>
+        </div>
+
+
 
     </body>
 

@@ -5,7 +5,7 @@
 
 <div class="container p-3 mt-0 ms-0 d-flex flex-column">
   <!-- Profile Introduction Banner -->
-  <div class="p-4 mb-3 bg-body-tertiary border rounded-3 shadow-lg">
+  <div class="p-4 mb-3 bg-body-tertiary border rounded-3 shadow-lg m-2">
     <div class="container-fluid py-2 mb-0 ">
       
       <div class="row align-items-center g-4">
@@ -43,40 +43,9 @@
         </div>
       </div>
 
-      <div class="container w-50">
+
+      <div class="container w-50 mt-5">
         <hr>
-      </div>
-
-      <div class="d-flex flex-column flex-md-row m-1 p-2 justify-content-center">
-        
-        <div class="card m-1 p-3 border-secondary">
-          <div class="list-header p-1 m-0 bg-"><h4>Right Now</h4></div>
-            <ul>
-              <li><strong>Reading: </strong>Confederacy of Dunces</li>
-              <li><strong>Watching: </strong>na</li>
-              <li><strong>Gaming: </strong>Underrail</li>
-              <li><strong>Listening: </strong>slowpace</li>
-            </ul>
-          </div>
-
-        <div class="card m-1 p-3 border-secondary">
-
-          <div class="list-header p-1 m-0 bg-">
-            <h4>To do/WIP learning/projects</h4>
-          </div>
-
-          <ul>
-            <li>Plotly -- WIP</li>
-            <li>Blog website -- done/WIP</li>
-            <li>Book Tracker -- WIP</li>
-            <li>create a github rep -- done 6/18</li>
-            <li>sync a github rep with pythonanywhere -- done 6/18</li>
-            <li>deploy django project -- done 6/28</li>
-            <li>About me session -- WIP</li>
-            <li>Blog Entry Filter -- WIP</li>
-          </ul>
-        </div>
-
       </div>
 
     </div>
@@ -95,7 +64,8 @@
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Notebook</button>
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Now</button>
+        <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-notebook" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Notebook</button>
         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Career</button>
         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
         
@@ -105,10 +75,49 @@
     <div class="tab-content" id="nav-tabContent">
 
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-        
         <div class="container m-2">
-          <p>Recent posts</p>
+
+      <div class="d-flex flex-column flex-md-row m-1 p-2">
+        
+        <div class="m-1 p-3 ">
+          <div class="list-header p-1 m-0"><h4>Right Now</h4></div>
+            <ul>
+              <li><strong>Reading: </strong>Confederacy of Dunces</li>
+              <li><strong>Watching: </strong>na</li>
+              <li><strong>Gaming: </strong>Underrail</li>
+              <li><strong>Listening: </strong>slowpace</li>
+            </ul>
+          </div>
+
+        <div class="m-1 p-3 ">
+
+          <div class="list-header p-1 m-0">
+            <h4>To do/WIP learning/projects</h4>
+          </div>
+
+          <ul>
+            <li>Plotly -- WIP</li>
+            <li>Blog website -- done/WIP</li>
+            <li>Book Tracker -- WIP</li>
+            <li>create a github rep -- done 6/18</li>
+            <li>sync a github rep with pythonanywhere -- done 6/18</li>
+            <li>deploy django project -- done 6/28</li>
+            <li>About me session -- WIP</li>
+            <li>Blog Entry Filter -- WIP</li>
+          </ul>
+        </div>
+
+      </div>
+
+        </div>
+      </div>
+
+
+      <div class="tab-pane fade show" id="nav-notebook" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+        <div class="container m-2">
+
           <div class="pt-3 pt-0 ">
+            <p>Recent posts</p>
           {% for entry in recent_posts %}
             <ul class="list-group list-group-flush bg-transparent">
                 <li class="list-group-item p-0 m-0 bg-transparent">
