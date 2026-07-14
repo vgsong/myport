@@ -4,88 +4,90 @@
 {% block content %}
 
 <div class="container p-3 mt-0 ms-0 d-flex flex-column">
+  <!-- Profile Introduction Banner -->
+  <div class="p-4 mb-3 bg-body-tertiary border rounded-3 shadow-lg">
+    <div class="container-fluid py-2 mb-0 ">
+      
+      <div class="row align-items-center g-4">
+        <!-- Profile Picture Column -->
+        <div class="col-12 col-md-auto text-center text-md-start ">
+          <img src="{% static 'minato/assets/main-portrait.png'%}" 
+              alt="Profile" 
+              class="rounded-circle border border-3 border-white shadow" 
+              style="width: 130px; height: 140px; object-fit: cover;">
+        </div>
+        <!-- Introduction Text Column -->
+        <div class="col-12 col-md text-center text-md-start">
+          <h3>マイハブ </h3>
+          <p class="fs-6 text-muted mb-2">Data/ERP System Analyst</p>
+          <p class="col-md-10 fs-6 text-secondary mb-1">
+          <p>I am Victor Song -- Welcome to my webgarden</p>
+          <p>Reading and programming are my hobbies. I love working with excel templates and automating repetitive processes. Excel, VBA, and Python put the daily bread on my table.</p>
+          <p>My front-end skills are lacking. LLM was used to generate bootstrap snippets, not entire pages. For Django back-end, LLM was used as reference and learning purposes.</p>
+        </div>
+        <!-- Social Links Container -->
+        <div class="d-flex justify-content-end justify-content-md-center gap-2">
+          <!-- GitHub Link -->
+          <a href="https://github.com/vgsong" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'minato/assets/general/github_icon.png' %}" alt="GitHub" style="width: 20px; height: 20px; object-fit: contain;">
+          </a>
+          <!-- LinkedIn Link -->
+          <a href="https://www.linkedin.com/in/victor-s-b59b5b232/" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'minato/assets/general/linkedin_icon.png' %}" alt="LinkedIn" style="width: 20px; height: 20px; object-fit: contain;">
+          </a>
 
-<!-- Profile Introduction Banner -->
-<div class="p-4 mb-3 bg-body-tertiary border rounded-3 shadow-lg">
-
-  <div class="container-fluid py-2 mb-0 ">
-    <div class="row align-items-center g-4">
-
-      <!-- Profile Picture Column -->
-      <div class="col-12 col-md-auto text-center text-md-start ">
-        <img src="{% static 'minato/assets/main-portrait.png'%}" 
-             alt="Profile" 
-             class="rounded-circle border border-3 border-white shadow" 
-             style="width: 130px; height: 140px; object-fit: cover;">
+          <!-- Emailme Link -->
+          <a href="" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'minato/assets/general/email_icon.png' %}" alt="about" style="width: 20px; height: 20px; object-fit: contain;">
+          </a>
+        </div>
       </div>
 
-      <!-- Introduction Text Column -->
-       
-      <div class="col-12 col-md text-center text-md-start">
-        <h3>マイハブ </h3>
-        <p class="fs-6 text-muted mb-2">Data/ERP System Analyst</p>
-        <p class="col-md-10 fs-6 text-secondary mb-1">
-        <p>I am Victor Song -- Welcome to my webgarden</p>
-        <p>Reading and programming are my hobbies. I love working with excel templates and automating repetitive processes. Excel, VBA, and Python put the daily bread on my table.</p>
-        <p>My front-end skills are lacking. LLM was used to generate bootstrap snippets, not entire pages. For Django back-end, LLM was used as reference and learning purposes.</p>
+      <div class="container w-50">
+        <hr>
       </div>
 
-      <!-- Social Links Container -->
-      <div class="d-flex justify-content-end justify-content-md-center gap-2">
-        <!-- GitHub Link -->
-        <a href="https://github.com/vgsong" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
-          <img src="{% static 'minato/assets/general/github_icon.png' %}" alt="GitHub" style="width: 20px; height: 20px; object-fit: contain;">
-        </a>
-        <!-- LinkedIn Link -->
-        <a href="https://www.linkedin.com/in/victor-s-b59b5b232/" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
-          <img src="{% static 'minato/assets/general/linkedin_icon.png' %}" alt="LinkedIn" style="width: 20px; height: 20px; object-fit: contain;">
-        </a>
+      <div class="d-flex flex-column flex-md-row m-1 p-2 justify-content-center">
+        
+        <div class="card m-1 p-3 border-secondary">
+          <div class="list-header p-1 m-0 bg-"><h4>Right Now</h4></div>
+            <ul>
+              <li><strong>Reading: </strong>Confederacy of Dunces</li>
+              <li><strong>Watching: </strong>na</li>
+              <li><strong>Gaming: </strong>Underrail</li>
+              <li><strong>Listening: </strong>slowpace</li>
+            </ul>
+          </div>
 
-        <!-- Emailme Link -->
-        <a href="" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
-          <img src="{% static 'minato/assets/general/email_icon.png' %}" alt="about" style="width: 20px; height: 20px; object-fit: contain;">
-        </a>
+        <div class="card m-1 p-3 border-secondary">
+
+          <div class="list-header p-1 m-0 bg-">
+            <h4>To do/WIP learning/projects</h4>
+          </div>
+
+          <ul>
+            <li>Plotly -- WIP</li>
+            <li>Blog website -- done/WIP</li>
+            <li>Book Tracker -- WIP</li>
+            <li>create a github rep -- done 6/18</li>
+            <li>sync a github rep with pythonanywhere -- done 6/18</li>
+            <li>deploy django project -- done 6/28</li>
+            <li>About me session -- WIP</li>
+            <li>Blog Entry Filter -- WIP</li>
+          </ul>
+        </div>
+
       </div>
 
     </div>
-
-    <div class="container w-50">
-      <hr>
-    </div>
-
-
-  <div class="d-flex flex-column flex-md-row m-1 p-2 justify-content-center">
- <div class="card m-1 p-3 border-secondary">
-    <div class="card-title p-1 m-0 bg-"><h4>Right Now</h4></div>
-    <ul>
-      <li><strong>Reading: </strong>Confederacy of Dunces</li>
-      <li><strong>Watching: </strong>na</li>
-      <li><strong>Gaming: </strong>Underrail</li>
-      <li><strong>Listening: </strong>slowpace</li>
-    </ul>
   </div>
-
-  <div class="card m-1 p-3 border-secondary">
-    <div class="card-title p-1 m-0 bg-"><h4>To do/WIP learning/projects</h4></div>
-    <ul>
-      <li>Plotly -- WIP</li>
-      <li>Blog website -- done/WIP</li>
-      <li>Book Tracker -- WIP</li>
-      <li>create a github rep -- done 6/18</li>
-      <li>sync a github rep with pythonanywhere -- done 6/18</li>
-      <li>deploy django project -- done 6/28</li>
-      <li>About me session -- WIP</li>
-      <li>Blog Entry Filter -- WIP</li>
-    </ul>
-  </div>
-  </div>
-
-
-  </div>
-
-</div>
 
   
+
+
+
+
+
   <div class="container-fluid m-1 ps-4">
     
   <div class="container-fluid py-2 mb-0 ">
@@ -191,9 +193,12 @@
             <a href="{% static 'minato/assets/general/VS MAIN_26.pdf'%}" target="_blank"><strong>Full Resume</strong></a>
           </div>
         </div>
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+        ...
+
+      </div>
     </div>
-  </div>
+    </div>
   </div>
   </div>
 </div>
