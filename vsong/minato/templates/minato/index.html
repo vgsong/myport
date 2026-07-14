@@ -3,7 +3,7 @@
 {% load plotly_dash %}
 {% block content %}
 
-<div class="container p-3 mt-0 ms-2 d-flex flex-column"  data-bs-theme="dark" >
+<div class="container p-3 mt-0 ms-0 d-flex flex-column">
 
 <!-- Profile Introduction Banner -->
 <div class="p-4 mb-3 bg-body-tertiary border rounded-3 shadow-lg">
@@ -12,7 +12,7 @@
     <div class="row align-items-center g-4">
 
       <!-- Profile Picture Column -->
-      <div class="col-12 col-md-auto text-center text-md-start">
+      <div class="col-12 col-md-auto text-center text-md-start ">
         <img src="{% static 'minato/assets/main-portrait.png'%}" 
              alt="Profile" 
              class="rounded-circle border border-3 border-white shadow" 
@@ -49,9 +49,14 @@
 
     </div>
 
-  <div class="container">
- <div class="row container-fluid  m-4 row-md-15">
-    <h5>Right Now</h5>
+    <div class="container w-50">
+      <hr>
+    </div>
+
+
+  <div class="d-flex flex-column flex-md-row m-1 p-2 justify-content-center">
+ <div class="card m-1 p-3 border-secondary">
+    <div class="card-title p-1 m-0 bg-"><h4>Right Now</h4></div>
     <ul>
       <li><strong>Reading: </strong>Confederacy of Dunces</li>
       <li><strong>Watching: </strong>na</li>
@@ -60,8 +65,8 @@
     </ul>
   </div>
 
-  <div class="row container-fluid  m-4 row-md-15">
-    <h5>To do/WIP learning/projects</h5>
+  <div class="card m-1 p-3 border-secondary">
+    <div class="card-title p-1 m-0 bg-"><h4>To do/WIP learning/projects</h4></div>
     <ul>
       <li>Plotly -- WIP</li>
       <li>Blog website -- done/WIP</li>
