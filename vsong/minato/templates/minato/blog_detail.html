@@ -3,7 +3,7 @@
 {% block content %}
 
     <div class="container">
-        <div class="container border-dark border-bottom border-3 p-3 w-80">
+        <div class="container border-dark border-bottom border-3  ms-5 p-3 w-80">
             <div>
                 <h1 class="m-0 p-0">{{ blog_entry.title }}</h1>
                 <p class="m-0 p-0 font-weight-light" style="font-size:10px">created on {{ blog_entry.created_on }}</p>
@@ -17,7 +17,7 @@
 
         </div>
 
-        <div class="container p-3 d-flex justify-content-center gap-3">
+        <div class="container p-3 d-flex ms-5 justify-content-center gap-3">
             
             {% for pic in pic_filenames %}
             
@@ -60,6 +60,7 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+
     const imageModal = document.getElementById('imageModal');
     
     imageModal.addEventListener('show.bs.modal', function (event) {

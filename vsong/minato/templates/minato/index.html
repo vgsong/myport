@@ -57,7 +57,7 @@
 
 
 
-  <div class="container-fluid m-1 ps-4">
+  <div class="container-fluid m-1">
     
   <div class="container-fluid py-2 mb-0 ">
     <p><strong style="color: #ffb000;">More About me</strong></p>
@@ -77,13 +77,13 @@
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
         <div class="container m-2">
 
-      <div class="d-flex flex-column flex-md-row m-1 p-2">
+      <div class="d-flex flex-column flex-md-row m-1 p-2 mb-0">
         
         <div class="m-1 p-3 ">
-          <div class="list-header p-1 m-0"><h4>Right Now</h4></div>
+
             <ul>
               <li><strong>Reading: </strong>Confederacy of Dunces</li>
-              <li><strong>Watching: </strong>na</li>
+              <li><strong>Watching: </strong>The Wire</li>
               <li><strong>Gaming: </strong>Underrail</li>
               <li><strong>Listening: </strong>slowpace</li>
             </ul>
@@ -136,7 +136,9 @@
           <table class="table table-hover align-middle p-2">
             <tbody>
               <tr>
-                <th scope="row" class="text-nowrap ps-4 m-0" style="width: 20%;">2021 – Present</th>
+                <th scope="row" class="text-nowrap ps-4 m-0" style="width: 20%;">
+                  2021 – Present
+                </th>
                 <td>
                   <div class="mb-2">
                     <strong class="d-inline-block me-2">Cordoba Corporation</strong>
@@ -211,5 +213,16 @@
   </div>
   </div>
 </div>
+
+<script>
+document.querySelectorAll('.nav-link').forEach(tab => {
+  tab.addEventListener('click', function (e) {
+    if (this.getAttribute('href') === '#') {
+      e.preventDefault();
+    }
+  });
+});
+</script>
+
 
 {% endblock %}

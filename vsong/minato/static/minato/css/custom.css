@@ -91,7 +91,7 @@
 
 .navbar-toggler{
   color: #ffb000;
-  padding: 0;
+  padding: 3px;
   margin: 0;
 
 }
@@ -100,7 +100,6 @@
   background-color: #ffb000;
   transform: rotate(180deg);
   transition: 0.1s;
-  border:2px;
   margin:0px;
   padding:0px;
 }
@@ -118,10 +117,10 @@
   max-width: 200px; 
   height: max-content; 
   max-height: 80vh;
-  
+  width: 350px; 
   /* Floating presentation */
   margin: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 5px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
   
@@ -131,7 +130,7 @@
 
 /* Subtle styling touch to dim the page background behind our popup window */
 .offcanvas-backdrop {
-  opacity: 0.4 !important;
+  opacity: 0.7 !important;
 }
 
 #footerFont {
