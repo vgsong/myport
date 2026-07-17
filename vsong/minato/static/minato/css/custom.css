@@ -59,6 +59,11 @@
 
 }
 
+#menuBtn {
+ color: #2e6f40;
+ outline: none;
+}
+
 #hoverLearn {
  color: #2e6f40;
 }
