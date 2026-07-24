@@ -1,5 +1,10 @@
 /* Modifies Bootstrap's built-in dark theme */
 [data-bs-theme="dark"] {
+* {
+  font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+  font-stretch: condensed; /* Makes the characters slightly tighter */
+}
+
   /* Global Accent Overrides */
   --bs-primary: #2e6f40;          /* Forest dark green primary color */
   --bs-primary-rgb: 46, 111, 64;
