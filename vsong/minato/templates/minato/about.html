@@ -1,33 +1,55 @@
 {% extends 'minato/main/base.html' %}
 {% block content %}
 
-<div class="container border border-light shadow round">
-    <p class="fs-5">About me</p>
-    <ul>
-    <li>Food</li>
-    <li>Websites</li>
-    <li>Hobbies</li>
-    <li>Games</li>
-    <li>Movies</li>
-    <li>Music</li>
-    <li>youtube channels</li>
-    <li>books</li>
-    </ul>
+<div class="container border border-2">
 
-    <p class="fs-5">Youtube Channels</p>
-    <ul>
-    <li>Drawn Out</li>
-    <li>Mandalore Gaming</li>
-    <li>Grim Beard</li>
-    </ul>
+<p class="fs-5">About me</p>
 
-    <p class="fs-5">Food</p>
-    <ul>
-    <li>Drawn Out</li>
-    <li>Mandalore Gaming</li>
-    <li>Grim Beard</li>
-    </ul>
- 
+<ul class="list-group">
+  
+  <!-- Item 2: Starts Opened (using .show) -->
+  <li class="list-group-item">
+    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist2">
+      ↳Bookmarks
+    </button>
+    <div class="collapse" id="sublist2">
+      <ul class="list-group mt-2">
+        <li class="ps-4">Neocities</li> 
+        <li class="ps-4">xkcd</li>
+        <li class="ps-4">Perry Bible Fellowship</li>
+      </ul>
+    </div>
+  </li>
+
+  <!-- Item 3: Starts Closed -->
+  <li class="list-group-item">
+    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist3">
+      📁 Youtube Channels
+    </button>
+    <div class="collapse" id="sublist3">
+      <ul class="list-group mt-2">
+        <li class="list-group-item ps-4">MongoDB (NoSQL)</li>
+        <li class="list-group-item ps-4">PostgreSQL (SQL)</li>
+      </ul>
+    </div>
+  </li>
+
+  <!-- Item 4: Starts Closed -->
+  <li class="list-group-item">
+    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist4">
+      📁 Gaming
+    </button>
+    <div class="collapse" id="sublist4">
+      <ul class="list-group mt-2">
+        <li class="list-group-item ps-4">Docker Containers</li>
+        <li class="list-group-item ps-4">GitHub Actions</li>
+      </ul>
+    </div>
+  </li>
+
+</ul>
+
+
 </div>
 
 <hr> 
