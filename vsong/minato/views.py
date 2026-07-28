@@ -286,11 +286,15 @@ def update_item_status(request):
     return JsonResponse({'success' : False}, status=400)
 
 
+
+
 def about(request):
+
+    
 
 
     context = {
-        'form': GuestBookForm(),
+        
     }
 
     return render(request, 'minato/about.html', context)

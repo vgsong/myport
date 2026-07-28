@@ -1,54 +1,63 @@
 {% extends 'minato/main/base.html' %}
 {% block content %}
 
-<div class="container border border-2">
+<div class="container m-5">
 
-<p class="fs-5">About me</p>
+  <p class="fs-4">About me</p>
 
-<ul class="list-group">
-  
-  <!-- Item 2: Starts Opened (using .show) -->
-  <li class="list-group-item">
-    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist2">
-      ↳Bookmarks
-    </button>
-    <div class="collapse" id="sublist2">
-      <ul class="list-group mt-2">
-        <li class="ps-4">Neocities</li> 
-        <li class="ps-4">xkcd</li>
-        <li class="ps-4">Perry Bible Fellowship</li>
-      </ul>
+  <div class="container d-flex flex-column gap-0 align-items-start">
+
+    <div class="card text-dark bg-warning mb-3 border rounded shadow-lg p-1" style="min-width: 400px;">
+      <div class="card-header" role="button" data-bs-toggle="collapse" data-bs-target="#bookmarkCollapse" aria-expanded="false" aria-controls="bookmarkCollapse">
+        <strong>Bookmarks</strong>
+      </div>
+
+        <div class="collapse" id="bookmarkCollapse">
+              <ul>
+                Useful
+              <li>ninite</li>
+              <li>RadioGarden</li>
+              <li>perry bible fellowship</li>
+              </ul>
+
+              <ul>
+                Useful
+              <li>ninite</li>
+              <li>xkcd</li>
+              <li>perry bible fellowship</li>
+              </ul>
+
+      </div>
     </div>
-  </li>
 
-  <!-- Item 3: Starts Closed -->
-  <li class="list-group-item">
-    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist3">
-      📁 Youtube Channels
-    </button>
-    <div class="collapse" id="sublist3">
-      <ul class="list-group mt-2">
-        <li class="list-group-item ps-4">MongoDB (NoSQL)</li>
-        <li class="list-group-item ps-4">PostgreSQL (SQL)</li>
-      </ul>
+    <div class="card text-dark bg-success mb-3 border rounded shadow-lg p-1" style="min-width: 400px;">
+      <div class="card-header" role="button" data-bs-toggle="collapse" data-bs-target="#favoritesCollapse" aria-expanded="false" aria-controls="favoritesCollapse">
+        <strong>Favorites</strong>
+      </div>
+
+        <div class="collapse" id="favoritesCollapse">
+              <ul>
+                Useful
+              <li>ninite</li>
+              <li>xkcd</li>
+              <li>perry bible fellowship</li>
+              <li>perry bible fellowship</li>
+              </ul>
+
+              <ul>
+                Useful
+              <li>ninite</li>
+              <li>xkcd</li>
+              <li>perry bible fellowship</li>
+              </ul>
+
+      </div>
     </div>
-  </li>
 
-  <!-- Item 4: Starts Closed -->
-  <li class="list-group-item">
-    <button class="btn btn-link text-decoration-none w-100 text-start" data-bs-toggle="collapse" data-bs-target="#sublist4">
-      📁 Gaming
-    </button>
-    <div class="collapse" id="sublist4">
-      <ul class="list-group mt-2">
-        <li class="list-group-item ps-4">Docker Containers</li>
-        <li class="list-group-item ps-4">GitHub Actions</li>
-      </ul>
-    </div>
-  </li>
 
-</ul>
 
+
+  </div>
 
 </div>
 

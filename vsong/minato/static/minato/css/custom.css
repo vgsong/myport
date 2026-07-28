@@ -64,6 +64,11 @@
 
 }
 
+#nowDiv{
+  border: 30px;
+}
+
+
 #menuBtn {
  color: #2e6f40;
  outline: none;
