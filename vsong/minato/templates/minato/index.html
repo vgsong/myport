@@ -23,7 +23,7 @@
           <p class="col-md-10 fs-6 text-secondary mb-1">
           <p>I am Victor Song -- Welcome to my webgarden</p>
           <p>Reading and programming are my hobbies. I love working with excel templates and automating repetitive processes. Excel, VBA, and Python put the daily bread on my table.</p>
-          <p>My front-end skills are lacking. LLM was used to generate bootstrap snippets, not entire pages. For Django back-end, LLM was used as reference and learning purposes.</p>
+          <p>My front-end skills are lacking. LLM was used to generate snippets, not entire pages. For Django back-end, LLM was used as reference and learning purposes.</p>
         </div>
         <!-- Social Links Container -->
         <div class="d-flex justify-content-end justify-content-md-center gap-2">
@@ -48,12 +48,24 @@
         <hr>
       </div>
 
+        <div class="slider-box">
+          <p class="fs-6 text-center">Rec最近t:</p>
+          <div class="slide-text">
+            <p>
+
+              -- Reading: A Confederacy of Dunces  |  
+              Watching: The Wire (S03)  |   
+              Playing: Underrail  |  
+              Eating: Thai Food  |  
+              Listening: Tchaikovsky --
+              
+            </p>
+          </div>
+
+        </div>
+
     </div>
   </div>
-
-  
-
-
 
 
 
@@ -64,7 +76,7 @@
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">今</button>
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">To do</button>
         <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-notebook" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Notebook</button>
         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Career</button>
         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button>
@@ -75,41 +87,33 @@
     <div class="tab-content" id="nav-tabContent">
 
       <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-        <div class="container m-2">
 
-      <div class="d-flex flex-column flex-md-row m-1 p-2 mb-0">
-        
-        <div class="m-1 p-3 border" id="nowDiv">
+        <div class="d-flex flex-column flex-md-column m-1 p-2 mb-0">
+  
+
+          
+
+          <div class="m-1 p-3 ">
+
+            <div class="list-header p-1 m-0">
+
+              <h4>To do/WIP learning/projects</h4>
+            </div>
 
             <ul>
-              <li><strong>Reading: </strong>A Confederacy of Dunces</li>
-              <li><strong>Watching: </strong>The Wire (S03)</li>
-              <li><strong>Gaming: </strong>Underrail</li>
-              <li><strong>Listening: </strong>N/A</li>
+              <li>Plotly -- WIP</li>
+              <li>Blog website -- done/WIP</li>
+              <li>Book Tracker -- WIP</li>
+              <li>create a github rep -- done 6/18</li>
+              <li>sync a github rep with pythonanywhere -- done 6/18</li>
+              <li>deploy django project -- done 6/28</li>
+              <li>About me session -- WIP</li>
+              <li>Blog Entry Filter -- WIP</li>
             </ul>
           </div>
 
-        <div class="m-1 p-3 ">
-
-          <div class="list-header p-1 m-0">
-            <h4>To do/WIP learning/projects</h4>
-          </div>
-
-          <ul>
-            <li>Plotly -- WIP</li>
-            <li>Blog website -- done/WIP</li>
-            <li>Book Tracker -- WIP</li>
-            <li>create a github rep -- done 6/18</li>
-            <li>sync a github rep with pythonanywhere -- done 6/18</li>
-            <li>deploy django project -- done 6/28</li>
-            <li>About me session -- WIP</li>
-            <li>Blog Entry Filter -- WIP</li>
-          </ul>
         </div>
 
-      </div>
-
-        </div>
       </div>
 
 
@@ -213,6 +217,8 @@
   </div>
   </div>
 </div>
+
+
 
 <script>
 document.querySelectorAll('.nav-link').forEach(tab => {

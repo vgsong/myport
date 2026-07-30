@@ -64,10 +64,16 @@
 
 }
 
-#nowDiv{
-  border: 30px;
-}
 
+
+#nowDiv{
+  border: 5px solid white;
+  background-color: #7fa98c;
+  padding: 3px;
+}
+#nowDiv ul li{
+  list-style-type: none;
+}
 
 #menuBtn {
  color: #2e6f40;
@@ -152,4 +158,25 @@
   font-size: x-small;
 }
 
+}
+
+.slider-box {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: block;
+}
+
+.slide-text {
+  display: inline-block;
+  animation: slide-left 25s linear infinite;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
