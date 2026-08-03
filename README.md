@@ -1,2 +1,4 @@
 # myport
-na
+
+Personal website created with Django framework.
+All for learning purposes.
