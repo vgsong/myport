@@ -306,9 +306,6 @@ def reading(request):
 
     books_all = BookTrackerEntry.objects.all()
 
-
-
-
     context = {
         'books_all' : books_all,
     }
