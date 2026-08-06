@@ -168,3 +168,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # URL that handles the media served from MEDIA_ROOT
 MEDIA_URL = '/media/'
 
+
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'horizontalLine', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'imageUpload'],
+    },
+    'extends': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'horizontalLine', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', '|', 'sourceEditing'],
+        # Add extra configuration options here
+    }
+}

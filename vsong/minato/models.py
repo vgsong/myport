@@ -1,8 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
-
-# Create your models here.
+from django_ckeditor_5.fields import CKEditor5Field
 
 
 class BlogCategory(models.Model):
@@ -19,7 +18,7 @@ class BlogEntry(models.Model):
     )
 
     title = models.CharField(max_length=50)
-    body = models.TextField()
+    body = CKEditor5Field('TEXT', config_name='extends')
     status = models.CharField(max_length=5,
                               choices=STATUS_CHOICES,
                               default='AC',)
