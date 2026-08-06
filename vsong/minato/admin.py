@@ -10,7 +10,7 @@ from .models import GuestBookEntry
 # Register your models here.
 @admin.register(BlogEntry)
 class BlogEntryAdmin(admin.ModelAdmin):
-    list_filter = ('status', 'created_on') 
+    list_filter = ('status', 'category', 'created_on') 
 
 # @admin.register(BookTrackerEntry)
 # class BookTrackerEntryAdmin(admin.ModelAdmin):
