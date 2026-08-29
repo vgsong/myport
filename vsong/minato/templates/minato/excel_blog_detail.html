@@ -2,8 +2,8 @@
 {% load markdown_extras %}
 {% block content %}
 
-    <div class="container" id="mainCardBlog">
-        <div class="container">
+    <div class="container col-12 col-md-6 m-0">
+        <div class="container border-dark border-bottom border-3  ms-5 p-3 w-80">
             <div>
                 <h1 class="m-0 p-0">{{ blog_entry.title }}</h1>
                 <p class="m-0 p-0 font-weight-light" style="font-size:10px">created on {{ blog_entry.created_on }}</p>
@@ -50,13 +50,12 @@
             </div>
         </div>
 
-        <div class="container pl-3 pt-3">
-            <a href="{% url 'blog' %}"><p>‹--Back</p></a>
-        </div>
-
     </div>
 
     
+<div class="container pl-3 pt-3">
+    <a href="{% url 'blog' %}"><p>‹--Back</p></a>
+</div>
 
 
 <script>

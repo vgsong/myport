@@ -14,28 +14,31 @@
         <link rel="stylesheet" href="{% static 'minato/css/custom.css'%}">
 
     </head>
-    
-    <body data-bs-theme="dark" style="height: 2000px;">
+
+    <body data-bs-theme="dark" class="lofi-screen">
+
 
         {% include 'minato/main/navbar.html' %}
 
-        <div class="d-flex flex-row bd-highlight mt-1 p-0 p-md-3">
+        <div class="d-flex flex-row bd-highlight mt-1 p-0 col-md-10 p-md-3">
 
-            <div class="bd-highlight col-12">
-                    
+                   
                 {% block content %}
                 {% endblock %}
-                
-            </div>
-    
+
+
+                <!-- <div class="container d-flex p-2 m-0 border-2 justify-content-center">
+                    <div class="text-center">
+                        <p class="m-0 p-0 fw-light" id="footerFont">©vgsong | Last updated: 08/28/2026</p>
+                        <p class="m-0 p-0 fw-light" id="footerFont">Website Powered by <a href="https://www.djangoproject.com/">Django!</a></p>
+                    </div>
+                </div> -->
+
+
+
         </div>
 
-        <div class="container d-flex p-2 m-0 border-2 justify-content-center">
-            <div class="text-center">
-                <p class="m-0 p-0 fw-light" id="footerFont">©vgsong | Last updated: 08/05/2026</p>
-                <p class="m-0 p-0 fw-light" id="footerFont">Website Powered by <a href="https://www.djangoproject.com/">Django!</a></p>
-            </div>
-        </div>
+
 
 
 

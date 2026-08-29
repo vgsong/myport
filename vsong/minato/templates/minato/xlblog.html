@@ -1,0 +1,19 @@
+{% extends 'minato/main/base.html' %}
+{% block content %}
+
+
+    <div class="container pt-3 ms-5">
+        <h3>Excel at Excel</h3>
+        {% for p in posts %}
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item p-0 m-0">
+                    <span class="">{{ p.created_on|date:"M d, Y" }} </span>
+                    <a class="text-truncate" href="{% url 'xlblog' p.id %}">{{ p.title }}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
+        
+
+            <hr> 
+{% endblock %}

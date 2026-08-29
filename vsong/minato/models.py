@@ -30,7 +30,7 @@ class BlogEntry(models.Model):
     def __str__(self):
         return '{}: {} - ID:{} - {}'.format(self.category, self.status, self.id, self.title)
 
-
+#  TODO will remove eventually
 class CompanyName(models.Model):
     name = models.CharField(max_length=100)
     
@@ -55,6 +55,7 @@ class JobTrackerEntry(models.Model):
         
     def __str__(self):
         return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)
+#  ------------------------
 
 
 class GuestBookEntry(models.Model):

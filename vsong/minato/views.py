@@ -200,7 +200,7 @@ def coffee_shop(request):
 # ----- blog views --------------------------
 def blog(request):
 
-    recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
+    recent_posts = BlogEntry.objects.filter(status='final', category='8').order_by('-created_on')
 
     context = {
                'recent_posts' : recent_posts
@@ -211,6 +211,7 @@ def blog(request):
 def blog_detail(request, detail_id):
     blog_entry = BlogEntry.objects.get(pk=int(detail_id))
     pic_filenames = []
+    
     pic_dir = STATIC_DIR / 'blog' / str(detail_id).zfill(3)
 
     for x in pic_dir.iterdir():
@@ -225,14 +226,15 @@ def blog_detail(request, detail_id):
                
     return render(request, 'minato/blog_detail.html', context)
 
-def excel_blog(request):
+def xlblog(request):
 
+    posts = BlogEntry.objects.filter(status='final', category='10').order_by('-created_on')
 
     context = {
+                'posts': posts,
+            }
 
-              }
-
-    return render(request, 'minato/excel_blog.html', context)
+    return render(request, 'minato/xlblog.html', context)
 
 
 @login_required
@@ -286,12 +288,7 @@ def update_item_status(request):
     return JsonResponse({'success' : False}, status=400)
 
 
-
-
 def about(request):
-
-    
-
 
     context = {
         

@@ -2,41 +2,32 @@
 {% block content %}
 
 
-    <div class="container-fluid d-flex flex-row m-5 p-2">
-        <!-- <div class="row col-4">
-        <h5>Filter By</h5>
-        CAT
-        <ul>
-            <li>Daily</li>
-            <li>Linux</li>
-        </ul>
+    <div class="container-fluid d-flex flex-row" id="mainCardBlog">
 
-        YEAR
-        <ul>
-            <li>2026</li>
-            <li>2025</li>
-        </ul>
-
-
-        </div> -->
-        <div class="row col-8">
+        <div id="blogEntryCard">
         <h2><strong>From my Apt Window</strong></h2>
 
         {% for entry in recent_posts %}
 
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item p-0 m-0">
-                    <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
-                    <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
-                </li>
-            </ul>
+        <ul id="blogEntryList">
+            <li>
+                <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
+                <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
+            </li>
+        </ul>
 
         {% endfor%}
         </div>
 
+
+        <!-- <div id="blogFilterCard">
+            Filter Category:
+            <ul id="blogEntryList">
+                <li>ph1</li>
+                <li>ph2</li>
+            </ul>      
+        </div> -->
+
     </div>
 
-
-    
-            <hr> 
 {% endblock %}
