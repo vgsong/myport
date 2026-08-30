@@ -5,20 +5,26 @@
     <div class="container-fluid d-flex flex-row" id="mainCardBlog">
 
         <div id="blogEntryCard">
-        <h2><strong>From my Apt Window</strong></h2>
+            <h2><strong>Notes</strong></h2>
 
-        {% for entry in recent_posts %}
+            {% for cat in cat_list %}
+            <div class="m-3">
+                <h6>{{cat}}</h6>
+                <ul id="blogEntryList">
+                {% for entry in recent_posts %}
+                    {% if entry.category.name == cat %}
+                        <li>
+                            <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
+                            <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}  
+                </ul>
+            </div>
+            <hr>
+            {% endfor %}
 
-        <ul id="blogEntryList">
-            <li>
-                <span class="">{{ entry.created_on|date:"M d, Y" }} </span>
-                <a class="text-truncate" href="{% url 'blog_detail' entry.id %}">{{ entry.title }}</a>
-            </li>
-        </ul>
-
-        {% endfor%}
         </div>
-
 
         <!-- <div id="blogFilterCard">
             Filter Category:

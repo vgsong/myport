@@ -5,7 +5,7 @@
     <div class="container" id="mainCardBlog">
         <div class="container">
             <div>
-                <h1 class="m-0 p-0">{{ blog_entry.title }}</h1>
+                <h1 class="m-0 p-0" style="color:#FFB7C5">{{ blog_entry.title }}</h1>
                 <p class="m-0 p-0 font-weight-light" style="font-size:10px">created on {{ blog_entry.created_on }}</p>
                 <p class="m-0 p-0 font-weight-light" style="font-size:10px">by {{ blog_entry.author }}</p>
                 <!-- <hr class="dashed"> -->
@@ -29,26 +29,6 @@
 
         </div>
 
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        
-                        <h5 class="modal-title" id="imageModalLabel"></h5>
-                    
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    
-                    </div>
-                
-                    <div class="modal-body text-center">
-
-                        <img id="modalImage" src="" class="img-fluid" alt="Expanded Image">
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
         <div class="container pl-3 pt-3">
             <a href="{% url 'blog' %}"><p>‹--Back</p></a>
@@ -59,23 +39,6 @@
     
 
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
 
-    const imageModal = document.getElementById('imageModal');
-    
-    imageModal.addEventListener('show.bs.modal', function (event) {
-        // Find the specific <a> link that was clicked
-        const triggerLink = event.relatedTarget;
-        
-        // Grab its custom data-image-src value
-        const targetImageSrc = triggerLink.getAttribute('data-image-src');
-        
-        // Push that value into the empty modal image placeholder
-        const modalImage = document.getElementById('modalImage');
-        modalImage.src = targetImageSrc;
-    });
-});
-</script>
 
 {% endblock %}

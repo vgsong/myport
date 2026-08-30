@@ -200,10 +200,22 @@ def coffee_shop(request):
 # ----- blog views --------------------------
 def blog(request):
 
-    recent_posts = BlogEntry.objects.filter(status='final', category='8').order_by('-created_on')
+    
+    # gets everything with final status
+    recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
+
+    # obtains cat list uniques from recent_posts x.category attribute
+    cat_list = list(set([str(x.category) for x in recent_posts]))
+
+    try:
+        cat_list.remove('Excel')
+    except:
+        print('no excel cat to remove')
 
     context = {
-               'recent_posts' : recent_posts
+               'recent_posts' : recent_posts,
+               'cat_list': cat_list,
+
               }
 
     return render(request, 'minato/blog.html', context)

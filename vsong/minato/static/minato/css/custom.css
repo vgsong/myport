@@ -7,7 +7,6 @@
 
 .lofi-screen {
   position: relative;
-  height: 2000px;
 }
 
 .lofi-screen::after {
@@ -17,7 +16,7 @@
   top: 0; left: 0; bottom: 0; right: 0;
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
               linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 10;
+  z-index: 1;
   background-size: 100% 2px, 4px 100%; /* Adjust size for pixel density */
   pointer-events: none; /* Allows users to still click elements underneath */
 } 
@@ -75,11 +74,11 @@ hr, .dropdown-divider {
 
 /* The HL1 Hover Effect */
 .navbar-nav .nav-link:hover {
-  color: #ffb000 !important; /* Classic HL1 Amber/Orange */
+  color: #FFB7C5 !important; /* Classic HL1 Amber/Orange */
   font-weight: 800; /* Subtle bold bump */
   /* Soft, gentle light glow */
-  text-shadow: 0 0 8px rgba(255, 176, 0, 0.6), 
-               0 0 15px rgba(255, 176, 0, 0.4); 
+  text-shadow: 0 0 8px rgba(#FFB7C5, 0.6), 
+               0 0 15px rgba(#FFB7C5, 0.4); 
   animation: slowGlow 15s infinite ease-in-out; 
   transition: ease-in-out;
   margin:1px;
@@ -111,7 +110,7 @@ hr, .dropdown-divider {
   background-color:#1C1F21 ;
 
   margin: 40px;
-  padding:10px;
+  padding:30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -171,7 +170,7 @@ hr, .dropdown-divider {
 }
 
 #yumeIcon:hover{
-  color: #ffb000 !important; /* Classic HL1 Amber/Orange */
+  color: #FFB7C5 !important; /* Classic HL1 Amber/Orange */
   font-weight: 800; /* Subtle bold bump */
   /* Soft, gentle light glow */
   text-shadow: 0 0 8px rgba(255, 176, 0, 0.6), 
@@ -190,14 +189,14 @@ hr, .dropdown-divider {
 }
 
 .navbar-toggler{
-  color: #ffb000;
+  color: #FFB7C5;
   padding: 3px;
   margin: 0;
 
 }
 
 .navbar-toggler:hover{
-  background-color: #ffb000;
+  background-color: #FFB7C5;
   transform: rotate(180deg);
   transition: 0.1s;
   margin:0px;
@@ -239,8 +238,17 @@ hr, .dropdown-divider {
 
 }
 
+/* ---- main about me */
+#mainAboutMe {
+  padding: 30px;
+  border: #FFB7C5;
+  border-style: dotted;
+  border-width: 1.6px;
+}
 
 
+
+/* ---- main about me */
 
 .slider-box {
   width: 100%;
@@ -263,7 +271,44 @@ hr, .dropdown-divider {
   }
 }
 
+.meuContainer {
+  position:relative;
+  display:inline-block;
+  background-color: rgb(#a0a0a0 / 0.5);
 
 
+#meuMonitor {
+  position: absolute;
+
+  top:16.5%;
+  right:15%;
+  left:26%; 
+  bottom: 10%;
+
+  width:300px;
+  height:240px;
+  z-index: 2;
+
+  background-color:#008081;
+  overflow:auto;
+  
+  padding: 15px;
+  box-sizing: border-box;
+  border-style: double;
+  border-width: 5px;
+  
+}
 
 
+#meuComputador {
+  padding: 30px 0px 0px 0px;
+  position: block;
+  top:auto;
+  right:auto;
+  bottom:auto;
+  left:auto;
+  width: none;
+  height: none;
+
+
+}
