@@ -274,27 +274,29 @@ hr, .dropdown-divider {
 .meuContainer {
   position:relative;
   display:inline-block;
-  background-color: rgb(#a0a0a0 / 0.5);
-
+  background-color: black 0.8;
+  
+}
 
 #meuMonitor {
   position: absolute;
+  font-size: 14px;
 
-  top:16.5%;
+  top:16.3%;
   right:15%;
   left:26%; 
   bottom: 10%;
 
-  width:300px;
+  width:315px;
   height:240px;
-  z-index: 2;
+  z-index: 0;
 
-  background-color:#008081;
+  background-color:#018281;
   overflow:auto;
   
-  padding: 15px;
+  padding: 5px 5px 7px 10px;
   box-sizing: border-box;
-  border-style: double;
+  border-style: inset;
   border-width: 5px;
   
 }
@@ -310,5 +312,38 @@ hr, .dropdown-divider {
   width: none;
   height: none;
 
+}
 
+#meuComputadorRedLight {
+  position: absolute;
+
+  top:76.1%;
+  right:15%;
+  left:67%; 
+  bottom: 10%;
+
+  width:20px;
+  height:20px;
+  z-index: 2;
+
+  background-color: black;
+  overflow:auto;
+  
+  padding: 5px 5px 7px 10px;
+  box-sizing: border-box;
+  border-style: inset;
+  border-width: 5px;
+
+  animation: meuComputadorRedLight 1.3s infinite;
+  
+
+}
+
+@keyframes meuComputadorRedLight {
+  0%, 100% {
+    background-color: inherit;
+  }
+  50%{
+    background-color:#DF0024;
+  }
 }
