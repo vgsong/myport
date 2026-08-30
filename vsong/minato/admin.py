@@ -7,7 +7,6 @@ from .models import BlogEntry, BlogCategory
 from .models import XlBlogEntry, XlBlogCategory
 from .models import GuestBookEntry
 
-
 # Register your models here.
 @admin.register(BlogEntry)
 class BlogEntryAdmin(admin.ModelAdmin):
@@ -20,7 +19,6 @@ class BlogEntryAdmin(admin.ModelAdmin):
 @admin.register(XlBlogEntry)
 class XlBlogEntryAdmin(admin.ModelAdmin):
     list_filter = ('status', 'category', 'created_on')
-
 
 admin.site.register(BlogCategory)
 admin.site.register(XlBlogCategory)
