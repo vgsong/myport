@@ -24,11 +24,39 @@ class BlogEntry(models.Model):
                               default='AC',)
     created_on = models.DateField(auto_now_add=True)
     last_modified = models.DateField(auto_now=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_post')
-    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_post')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    category = models.ForeignKey(BlogCategory, on_delete=models.CASCADE, related_name='blog_posts')
     
     def __str__(self):
         return '{}: {} - ID:{} - {}'.format(self.category, self.status, self.id, self.title)
+
+
+class XlBlogCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+class XlBlogEntry(models.Model):
+    STATUS_CHOICES = (
+        ('draft', 'DRAFT'),
+        ('final', 'FINAL'),
+    )
+
+    title = models.CharField(max_length=50)
+    body = CKEditor5Field('TEXT', config_name='extends')
+    status = models.CharField(max_length=5,
+                              choices=STATUS_CHOICES,
+                              default='AC',)
+    created_on = models.DateField(auto_now_add=True)
+    last_modified = models.DateField(auto_now=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='xlblog_posts')
+    category = models.ForeignKey(XlBlogCategory, on_delete=models.CASCADE, related_name='xlblog_posts')
+    
+    def __str__(self):
+        return '{}: {} - ID:{} - {}'.format(self.category, self.status, self.id, self.title)
+
 
 #  TODO will remove eventually
 class CompanyName(models.Model):

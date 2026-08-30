@@ -4,6 +4,7 @@ from .models import User
 from .models import BookTrackerEntry
 from .models import JobTrackerEntry, CompanyName
 from .models import BlogEntry, BlogCategory
+from .models import XlBlogEntry, XlBlogCategory
 from .models import GuestBookEntry
 
 
@@ -16,9 +17,13 @@ class BlogEntryAdmin(admin.ModelAdmin):
 # class BookTrackerEntryAdmin(admin.ModelAdmin):
 #     list_filter = ('status', 'started_on') 
 
+@admin.register(XlBlogEntry)
+class XlBlogEntryAdmin(admin.ModelAdmin):
+    list_filter = ('status', 'category', 'created_on')
 
 
 admin.site.register(BlogCategory)
+admin.site.register(XlBlogCategory)
 admin.site.register(JobTrackerEntry)
 admin.site.register(CompanyName)
 admin.site.register(BookTrackerEntry)
