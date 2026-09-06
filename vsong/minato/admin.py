@@ -6,6 +6,7 @@ from .models import JobTrackerEntry, CompanyName
 from .models import BlogEntry, BlogCategory
 from .models import XlBlogEntry, XlBlogCategory
 from .models import GuestBookEntry
+from .models import SingEntry
 
 # Register your models here.
 @admin.register(BlogEntry)
@@ -26,4 +27,5 @@ admin.site.register(JobTrackerEntry)
 admin.site.register(CompanyName)
 admin.site.register(BookTrackerEntry)
 admin.site.register(GuestBookEntry)
+admin.site.register(SingEntry)
 

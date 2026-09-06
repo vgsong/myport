@@ -11,4 +11,5 @@ class JobTrackerEntryForm(forms.ModelForm):
 class GuestBookForm(forms.ModelForm):
     class Meta:
         model = GuestBookEntry
-        fields = '__all__'
+        fields = ['name', 'email_contact', 'website_url', 'message']
+

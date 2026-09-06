@@ -14,6 +14,7 @@ urlpatterns= [
     path('xlblog/', views.xlblog, name='xlblog'),
     path('xlblog/details/<int:detail_id>', views.xlblog, name='xlblog'),
     path('about/', views.about, name='about'),
+    path('guestbook/', views.guestbook, name='guestbook'),
     path('update_item_status/', views.update_item_status, name='update_item_status'),
 
 ]

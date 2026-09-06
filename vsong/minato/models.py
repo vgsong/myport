@@ -1,3 +1,4 @@
+from datetime import date
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -87,9 +88,19 @@ class JobTrackerEntry(models.Model):
 
 
 class GuestBookEntry(models.Model):
+
+    STATUS_CHOICES = [
+        ('DRAFT', 'draft'),
+        ('POSTED', 'posted'),
+
+    ]
+
     name = models.CharField(max_length=20)
     email_contact = models.EmailField(max_length=254)
+    website_url = models.URLField(max_length=250, blank=True, null=True)
     message = models.TextField() 
+    status = models.CharField(choices=STATUS_CHOICES, default='draft')
+    created_on = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return '{}: {} - {} - STATUS: {}'.format(self.name, self.email_contact)
@@ -114,3 +125,15 @@ class BookTrackerEntry(models.Model):
         
     def __str__(self):
         return '{}: {} - {} - STATUS: {}'.format(self.started_on, self.id, self.title, self.status)
+
+
+class SingEntry(models.Model):
+    watching = models.CharField(max_length=50)
+    playing = models.CharField(max_length=50)
+    eating = models.CharField(max_length=50)
+    listening = models.CharField(max_length=50)
+    learning = models.CharField(max_length=50)
+    feeling = models.CharField(max_length=50)
+    status_message = models.CharField(max_length=200)
+    
+    created_on = models.DateField(auto_now_add=True)

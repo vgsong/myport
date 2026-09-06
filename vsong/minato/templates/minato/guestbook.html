@@ -4,6 +4,16 @@
 
     <div class="container-fluid d-flex flex-row" id="mainCardBlog">
 
+
+        <form method="POST" id="guestBookForm">
+            <div class="form-group">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">POST</button>
+            </div>
+        </form>
+
+
         <div>form</div>
         <div>messages</div>
 

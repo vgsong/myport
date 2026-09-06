@@ -16,7 +16,7 @@ from django.templatetags.static import static
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry
+from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry, GuestBookEntry
 from .forms import JobTrackerEntryForm, GuestBookForm
 
 import plotly.express as px
@@ -307,6 +307,23 @@ def about(request):
     }
 
     return render(request, 'minato/about.html', context)
+
+def guestbook(request):
+
+    context = {
+        'form': GuestBookForm(),
+    }
+
+    if request.method == 'POST':
+        guest_messages = GuestBookEntry.objects.filter(status='POSTED').order_by()
+        print('this is a post')
+        return render(request, 'minato/guestbook.html', context)
+    else:
+        return render(request, 'minato/guestbook.html', context)
+
+
+
+
 
 def profexp(request):
     return render(request, 'minato/profexp.html')
