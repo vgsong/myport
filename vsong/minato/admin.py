@@ -23,6 +23,7 @@ class BlogEntryAdmin(admin.ModelAdmin):
 class XlBlogEntryAdmin(admin.ModelAdmin):
     list_filter = ('status', 'category', 'created_on')
 
+
 admin.site.register(BlogCategory)
 admin.site.register(XlBlogCategory)
 admin.site.register(JobTrackerEntry)
@@ -30,6 +31,6 @@ admin.site.register(CompanyName)
 admin.site.register(BookTrackerEntry)
 admin.site.register(GuestBookEntry)
 admin.site.register(SingEntry)
-admin.site.register(BookmarkEntry)
 admin.site.register(BookmarkCategory)
+admin.site.register(BookmarkEntry)
 

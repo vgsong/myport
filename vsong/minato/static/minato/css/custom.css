@@ -184,9 +184,56 @@ hr, .dropdown-divider {
   margin: 0;
 }
 
+#singMessageOkbutton {
+  text-align: center;
+  color: rgb(172, 172, 172);
+  font-weight:bold;
 
+  border-style: inset;
+  border-color: rgb(206, 206, 206);
+  border-width: 3px;
+
+  width: 50px;
+  padding: 2px 5px 2px 5px;
+  margin: 10px 45% 10px;
+  transition: border 0.3s;
+  
+}
+
+#singMessageOkbutton:hover {
+  border:outset
+}
 
 /* end of css for update broadcast in index */
+
+#planterNook{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#planterNookContainer{
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+
+#planterNookImg{
+  padding: 0;
+  margin: 0;
+  height: 40px;
+  width: 30px;
+}
+
+
+
+#bookmarkList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
 
 /* blog --- */
@@ -196,6 +243,9 @@ hr, .dropdown-divider {
   border-width: 3px;
   margin:10px;
 }
+
+
+
 
 
 #blogEntryCard {

@@ -98,6 +98,9 @@
               <div id="singMessageTimestamp">
                 postdate: {{ sing_update.created_on }} by vs on a quiet afternoon
               </div>
+              <div id="singMessageOkbutton">
+                OK
+              </div>
             </div>
 
           </div>
@@ -113,15 +116,25 @@
     
   <div class="container mb-0 ">
 
-    <p><strong style="color: #FFB7C5;">More About me</strong></p>
-    
+    <div id="planterNook">
+      <div id="planterNookContainer">
+        <p><strong style="color: #FFB7C5;">More About me</strong></p>
+      </div>
+
+      <div id="planterNookContainer">
+        <img id="planterNookImg" src="{% static 'minato/assets/general/pa_plant02.png' %}">
+        <img id="planterNookImg" src="{% static 'minato/assets/general/pa_plant01.png' %}">
+        <img id="planterNookImg" src="{% static 'minato/assets/general/pa_plant04.png' %}">
+      </div>
+        
+    </div>
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-todo" aria-selected="true">To do</button>
         <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-notebook" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Notebook</button>
         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Career</button>
-        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-bookmark" aria-selected="false">Bookmarks★</button>
+        <button class="nav-link" id="nav-bookmark-tab" data-bs-toggle="tab" data-bs-target="#nav-bookmark" type="button" role="tab" aria-controls="nav-bookmark" aria-selected="false">Bookmarks</button>
         
       </div>
     </nav>
@@ -242,7 +255,7 @@
                     <strong class="d-inline-block me-2">Moss Adams, LLP</strong>
                     <small class="text-muted">Irvine, CA</small>
                   </div>
-                  <p class="mb-0 text-secondary">First real, office job. Public accounting right after graduating. Participated in end-to-end GAAP financial statement audits across diverse sectors like healthcare, technology, and construction. Eye-opening getting to see a professional excel workpaper for the first time.</p>
+                  <p class="mb-0 text-secondary">First, real, office job. Public accounting right after graduating. Participated in end-to-end GAAP financial statement audits across diverse sectors like healthcare, technology, and construction. Eye-opening getting to see a professional excel workpaper for the first time.</p>
                 </td>
               </tr>
             </tbody>
@@ -251,10 +264,18 @@
             <a href="{% static 'minato/assets/general/VS MAIN_26.pdf'%}" target="_blank"><strong>Full Resume</strong></a>
           </div>
         </div>
-      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-bookmark-tab" tabindex="0">
-        <div class="container">
+      </div>
+
+      <div class="tab-pane fade" id="nav-bookmark" role="tabpanel" aria-labelledby="nav-bookmark-tab" tabindex="0">
+        
+        <div class="container p-3">
           {% for bm in bookmark_items %}
-            <p>{{ bm.title }}</p>
+          {% ifchanged bm.category %}
+            <ul id="bookmarkList">{{ bm.category }}</ul>
+          {% endifchanged %}
+            <li id="bookmarkList"><a href="{{ bm.url }}" title="{{bm.title}}">{{ bm.title }} - {{ bm.about }}</a></li>
+          {% empty %}
+            <p>not working</p>  
           {% endfor %}
           
         </div>
@@ -264,7 +285,7 @@
 
 
 
-    </div>
+
     </div>
   </div>
   </div>
