@@ -131,8 +131,8 @@
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
-        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-todo" aria-selected="true">To do</button>
-        <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-notebook" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Notebook</button>
+        <button class="nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-todo" aria-selected="true">To do</button>
+        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-notebook" type="button" role="tab" aria-controls="nav-home" aria-selected="false">Notebook</button>
         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Career</button>
         <button class="nav-link" id="nav-bookmark-tab" data-bs-toggle="tab" data-bs-target="#nav-bookmark" type="button" role="tab" aria-controls="nav-bookmark" aria-selected="false">Bookmarks</button>
         
@@ -141,7 +141,7 @@
 
     <div class="tab-content" id="nav-tabContent">
 
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-todo-tab" tabindex="0">
+      <div class="tab-pane fade show" id="nav-home" role="tabpanel" aria-labelledby="nav-todo-tab" tabindex="0">
 
         <div class="d-flex flex-column flex-md-column m-1 p-2 mb-0">
   
@@ -154,7 +154,6 @@
             </div>
 
             <ul>
-              <li>Plotly -- WIP</li>
               <li>Blog website -- done/WIP</li>
               <li>Book Tracker -- WIP</li>
               <li>create a github rep -- done 6/18</li>
@@ -165,6 +164,8 @@
               <li>Blog Entry Filter -- WIP</li>
               <li>Update Layout -- 8/31</li>
               <li>Ditch Bootrap -- WIP</li>
+              <li>Bookmarks -- 9/5</li>
+              <li>Guestbook -- WIP</li>
             </ul>
           </div>
 
@@ -173,7 +174,7 @@
       </div>
 
 
-      <div class="tab-pane fade show" id="nav-notebook" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+      <div class="tab-pane fade show active" id="nav-notebook" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
         <div class="container m-2">
 
           <div class="pt-3 pt-0 ">
@@ -271,7 +272,7 @@
         <div class="container p-3">
           {% for bm in bookmark_items %}
           {% ifchanged bm.category %}
-            <ul id="bookmarkList">{{ bm.category }}</ul>
+            <ul id="bookmarkList">{{ bm.category }}--</ul>
           {% endifchanged %}
             <li id="bookmarkList"><a href="{{ bm.url }}" title="{{bm.title}}">{{ bm.title }} - {{ bm.about }}</a></li>
           {% empty %}
