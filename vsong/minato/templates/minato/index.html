@@ -253,6 +253,9 @@
         </div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-bookmark-tab" tabindex="0">
         <div class="container">
+          {% for bm in bookmark_items %}
+            <p>{{ bm.title }}</p>
+          {% endfor %}
           
         </div>
 

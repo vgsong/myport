@@ -9,7 +9,7 @@
 
             {% for cat in cat_list %}
             <div class="m-3">
-                <h6>{{cat}}</h6>
+                <h6>{{cat}}-- </h6>
                 <ul id="blogEntryList">
                 {% for entry in recent_posts %}
                     {% if entry.category.name == cat %}

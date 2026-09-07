@@ -8,7 +8,6 @@ from dash import dcc, html
 from pathlib import Path
 from dotenv import load_dotenv
 
-
 from django.http import JsonResponse
 from django.shortcuts import render
 from django_plotly_dash import DjangoDash
@@ -16,11 +15,15 @@ from django.templatetags.static import static
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry, GuestBookEntry, SingEntry
+from .models import BlogEntry, JobTrackerEntry
+from .models import BookTrackerEntry, GuestBookEntry
+from .models import SingEntry, BookmarkEntry
+
 from .forms import JobTrackerEntryForm, GuestBookForm
 
 import plotly.express as px
 import plotly.graph_objects as go
+
 
 load_dotenv()
 
@@ -177,7 +180,8 @@ def coffeesales_chart():
 def index(request):
     
     recent_posts = BlogEntry.objects.filter(status='final',category='8').order_by('-created_on')
-    
+    bookmark_items = BookmarkEntry.objects.all().order_by('category')
+
     try:
         recent_update = BlogEntry.objects.filter(status='final', category='11').order_by('-created_on')[0]
     except:
@@ -189,11 +193,13 @@ def index(request):
         sing_update = None
 
 
+
     context = {
             'username' : 'vgs',
             'recent_posts' : recent_posts[:7],
             'recent_update' : recent_update,
             'sing_update': sing_update,
+            'bookmark_items': bookmark_items,
     }
 
     return render(request, 'minato/index.html', context)
@@ -332,10 +338,6 @@ def guestbook(request):
         return render(request, 'minato/guestbook.html', context)
     else:
         return render(request, 'minato/guestbook.html', context)
-
-
-
-
 
 def profexp(request):
     return render(request, 'minato/profexp.html')
