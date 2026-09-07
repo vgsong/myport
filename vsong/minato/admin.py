@@ -7,6 +7,8 @@ from .models import BlogEntry, BlogCategory
 from .models import XlBlogEntry, XlBlogCategory
 from .models import GuestBookEntry
 from .models import SingEntry
+from .models import BookmarkEntry, BookmarkCategory
+
 
 # Register your models here.
 @admin.register(BlogEntry)
@@ -28,4 +30,6 @@ admin.site.register(CompanyName)
 admin.site.register(BookTrackerEntry)
 admin.site.register(GuestBookEntry)
 admin.site.register(SingEntry)
+admin.site.register(BookmarkEntry)
+admin.site.register(BookmarkCategory)
 

@@ -141,3 +141,20 @@ class SingEntry(models.Model):
 
     def __str__(self):
         return '{}: {}'.format(str(self.id).zfill(2), self.created_on)
+
+class BookmarkCategory(models.Model):
+    name = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name
+
+
+class BookmarkEntry(models.Model):
+    url = models.URLField()
+    title = models.CharField(max_length=50)
+    about = models.CharField(max_length=100, null=True, blank=True)
+    category = models.ForeignKey(BookmarkCategory, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return '{}: {} - {}'.format(str(self.id).zfill(2), self.category, self.title)
