@@ -16,7 +16,7 @@ from django.templatetags.static import static
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry, GuestBookEntry
+from .models import BlogEntry, JobTrackerEntry, BookTrackerEntry, GuestBookEntry, SingEntry
 from .forms import JobTrackerEntryForm, GuestBookForm
 
 import plotly.express as px
@@ -176,12 +176,24 @@ def coffeesales_chart():
 
 def index(request):
     
-    recent_posts = BlogEntry.objects.filter(status='final').order_by('-created_on')
+    recent_posts = BlogEntry.objects.filter(status='final',category='8').order_by('-created_on')
+    
+    try:
+        recent_update = BlogEntry.objects.filter(status='final', category='11').order_by('-created_on')[0]
+    except:
+        recent_update = None
+
+    try:
+        sing_update = SingEntry.objects.order_by('-id').first()
+    except:
+        sing_update = None
+
 
     context = {
             'username' : 'vgs',
             'recent_posts' : recent_posts[:7],
-            # 'line': dropdown_chart(),
+            'recent_update' : recent_update,
+            'sing_update': sing_update,
     }
 
     return render(request, 'minato/index.html', context)

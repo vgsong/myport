@@ -91,7 +91,7 @@ hr, .dropdown-divider {
   border-width: 1.7px;
   border-color:#FFB7C5;
 
-  max-width: 900px;
+  max-width: 850px;
   background-color:#1E252B;
   opacity: 0.90;
 
@@ -112,6 +112,77 @@ hr, .dropdown-divider {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+/* ---- updates broadcast */
+
+#singMessageWindow {
+  border-style: inset;
+  border-width: 3px;
+  border-color:#FFB7C5;
+  background-color: #838383;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#singMessageTitle {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to right, #6b8a94, #00008b);
+  border-style: solid;
+  border-color: black;
+  border-width: 1.5px;
+  padding: 0 0 0 5px;
+  margin: 0px;
+
+}
+
+#singMessageTitleButtonGroup {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 0 0;
+  margin: 0px;
+
+}
+
+#singMessageTitleIcon {
+  width: 20px;
+  height: 20px;
+  border-style: inset;
+  border-color: black;
+  border-width: 0 1.4px;
+  background-color: #7f7f7f;
+  padding: 0.5px;
+  margin: 0.5px;
+  text-align: center;
+  font-size:xx-small;
+  transition: filter 0.3s ease;
+
+}
+
+#singMessageTitleIcon:hover {
+  filter:invert(1);
+}
+
+
+#singMessageUpdate {
+  padding: 15px;
+  border-style: inset;
+  border-color: black;
+  border-width: 1.4px;
+  font-size: small;
+}
+
+#singMessageTimestamp {
+  font-style: italic ;
+  font-weight: bold;
+  font-size: smaller;
+  margin: 0;
+}
+
+
+
+/* end of css for update broadcast in index */
 
 
 /* blog --- */
@@ -346,5 +417,5 @@ hr, .dropdown-divider {
 
 
 #guestBookForm {
-  color: #005d5d;
+  color: #FFB7C5;
 }

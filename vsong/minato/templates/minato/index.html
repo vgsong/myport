@@ -4,19 +4,19 @@
 {% block content %}
 
 <div class="container p-3 d-flex flex-column">
-  <!-- Profile Introduction Banner -->
+
   <div class="m-1 p-3" id="mainCard">
     <div class="container-fluid py-2 mb-0 ">
       
       <div class="row align-items-center g-4">
-        <!-- Profile Picture Column -->
+
         <div class="col-12 col-md-auto text-center text-md-start ">
           <img src="{% static 'minato/assets/main-portrait.png'%}" 
               alt="Profile" 
               class="rounded-circle border border-3 border-white shadow" 
               style="width: 130px; height: 140px; object-fit: cover;">
         </div>
-        <!-- Introduction Text Column -->
+
         <div class="col-12 col-md text-center text-md-start">
           <h3 style="color:#FFB7C5;">マイハブ </h3>
           <p class="fs-6 text-muted mb-2">Data/ERP System Analyst</p>
@@ -28,18 +28,17 @@
           
           <p>My front-end skills are lacking. LLM was used as reference and learning, and never (almost) for generative purposes.</p>
         </div>
-        <!-- Social Links Container -->
+
         <div class="d-flex justify-content-end justify-content-md-center gap-2">
-          <!-- GitHub Link -->
+
           <a href="https://github.com/vgsong" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
             <img src="{% static 'minato/assets/general/github_icon.png' %}" alt="GitHub" style="width: 20px; height: 20px; object-fit: contain;">
           </a>
-          <!-- LinkedIn Link -->
+
           <a href="https://www.linkedin.com/in/victor-s-b59b5b232/" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
             <img src="{% static 'minato/assets/general/linkedin_icon.png' %}" alt="LinkedIn" style="width: 20px; height: 20px; object-fit: contain;">
           </a>
 
-          <!-- Emailme Link -->
           <a href="mailto:vctrsong@gmail.com" class="btn btn-outline-primary border-2 rounded-pill d-inline-flex align-items-center justify-content-center p-2" style="width: 40px; height: 40px;" target="_blank" rel="noopener noreferrer">
             <img src="{% static 'minato/assets/general/email_icon.png' %}" alt="about" style="width: 20px; height: 20px; object-fit: contain;">
           </a>
@@ -56,19 +55,50 @@
           <div class="slide-text">
             <p>
 
-              -- 読Reading: Eugene Onegin by Pushkin  |  
-              見Watching: Family Guy (S04)  |   
-              Playing: Rift Wizard 2 / TF2  |  
-              食Eating: Thai Food  |  
-              聞Listening: Ecco the Dolphin OST |
-              学Learning: Django/CSS |
-              感Feeling: always blue, blue always --
+              -- 読Reading: {{ sing_update.reading }} |  
+              見Watching: {{ sing_update.watching }}  |   
+              Playing: {{ sing_update.playing }}  |  
+              食Eating: {{ sing_update.eating }}  |  
+              聞Listening: {{ sing_update.listening }} |
+              学Learning: {{ sing_update.learning }} |
+              感Feeling: {{ sing_update.feeling }} --
               
             </p>
           </div>
 
-        </div>
 
+
+        </div>
+        {% if sing_update.status_message %}
+          <div id="singMessageWindow">
+            <div id="singMessageTitle">
+              <div>
+              <strong> MESSAGEBOX </strong>
+              </div>
+              <div id="singMessageTitleButtonGroup">
+                  <div id="singMessageTitleIcon">
+                  <strong>一</strong>
+                </div>
+                <div id="singMessageTitleIcon">
+                  <strong>口</strong>
+                </div>
+                <div id="singMessageTitleIcon">
+                  <strong>X</strong>
+                </div>
+              </div>              
+            </div>
+            <div id="singMessageUpdate">
+            {{ sing_update.status_message }}
+
+            <br>
+            <br>
+            <div id="singMessageTimestamp">
+              posted on: {{ sing_update.created_on }} by vs
+            </div>
+            </div>
+          </div>
+        {% else %}
+        {% endif %}
     </div>
   </div>
 
@@ -76,7 +106,7 @@
 
   <div class="m-1 p-3" id="mainCard">
     
-  <div class="container-fluid mb-0 ">
+  <div class="container mb-0 ">
 
     <p><strong style="color: #FFB7C5;">More About me</strong></p>
     

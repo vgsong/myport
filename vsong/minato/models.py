@@ -128,12 +128,16 @@ class BookTrackerEntry(models.Model):
 
 
 class SingEntry(models.Model):
+    reading = models.CharField(max_length=50)
     watching = models.CharField(max_length=50)
     playing = models.CharField(max_length=50)
     eating = models.CharField(max_length=50)
     listening = models.CharField(max_length=50)
     learning = models.CharField(max_length=50)
     feeling = models.CharField(max_length=50)
-    status_message = models.CharField(max_length=200)
-    
+    status_message = models.CharField(max_length=200, null=True, blank=True)    
+
     created_on = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return '{}: {}'.format(str(self.id).zfill(2), self.created_on)
