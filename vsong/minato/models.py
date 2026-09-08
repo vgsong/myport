@@ -100,6 +100,8 @@ class GuestBookEntry(models.Model):
     status = models.CharField(choices=STATUS_CHOICES, default='draft')
     created_on = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+        return '{}: {} - {}'.format(str(self.id).zfill(2), self.created_on, self.email_contact)
 
 class BookTrackerEntry(models.Model):
     STATUS_CHOICES = [

@@ -198,7 +198,7 @@ def index(request):
 
     context = {
             'username' : 'vgs',
-            'recent_posts' : recent_posts[:7],
+            'recent_posts' : recent_posts[:10],
             'recent_update' : recent_update,
             'sing_update': sing_update,
             'bookmark_items': bookmark_items,
