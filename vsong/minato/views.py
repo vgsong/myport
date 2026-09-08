@@ -9,17 +9,19 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django_plotly_dash import DjangoDash
 from django.templatetags.static import static
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 
-from .models import BlogEntry, JobTrackerEntry
+from .models import BlogEntry
+# from .models import JobTrackerEntry
 from .models import BookTrackerEntry, GuestBookEntry
 from .models import SingEntry, BookmarkEntry
 
-from .forms import JobTrackerEntryForm, GuestBookForm
+from .forms import GuestBookForm
+# from .forms import JobTrackerEntryForm
 
 import plotly.express as px
 import plotly.graph_objects as go
@@ -287,35 +289,35 @@ def jquery_learn(request):
         }
     return render(request, 'minato/jquery_learn.html', context)
 
-@login_required
-def job_tracker(request):
+# @login_required
+# def job_tracker(request):
 
-    applied_cat = [x[0] for x in JobTrackerEntry.STATUS_CHOICES]
-    jobs_applied = JobTrackerEntry.objects.all().order_by('-applied_on')
-    form = JobTrackerEntryForm()
+#     applied_cat = [x[0] for x in JobTrackerEntry.STATUS_CHOICES]
+#     jobs_applied = JobTrackerEntry.objects.all().order_by('-applied_on')
+#     form = JobTrackerEntryForm()
 
-    context = {
-        'jobs_applied' : jobs_applied,
-        'applied_cat' : applied_cat,
-        'form': form,
-    }
+#     context = {
+#         'jobs_applied' : jobs_applied,
+#         'applied_cat' : applied_cat,
+#         'form': form,
+#     }
 
-    return render(request, 'minato/job_tracker.html', context)
+#     return render(request, 'minato/job_tracker.html', context)
 
-@login_required
-def update_item_status(request):
-    if request.method == 'POST':
+# @login_required
+# def update_item_status(request):
+#     if request.method == 'POST':
         
-        data = json.loads(request.body)
-        applied_id = data.get('id')
-        new_status = data.get('status')
-        print(new_status)
-        item = JobTrackerEntry.objects.get(id=applied_id)
-        item.status = new_status
-        item.save()
+#         data = json.loads(request.body)
+#         applied_id = data.get('id')
+#         new_status = data.get('status')
+#         print(new_status)
+#         item = JobTrackerEntry.objects.get(id=applied_id)
+#         item.status = new_status
+#         item.save()
 
-        return JsonResponse({'success' : True})
-    return JsonResponse({'success' : False}, status=400)
+#         return JsonResponse({'success' : True})
+#     return JsonResponse({'success' : False}, status=400)
 
 
 def about(request):
@@ -333,7 +335,10 @@ def guestbook(request):
     }
 
     if request.method == 'POST':
-        guest_messages = GuestBookEntry.objects.filter(status='POSTED').order_by()
+        form = GuestBookForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('guestbook')
         print('this is a post')
         return render(request, 'minato/guestbook.html', context)
     else:

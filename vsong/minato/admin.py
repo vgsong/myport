@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import User
 from .models import BookTrackerEntry
-from .models import JobTrackerEntry, CompanyName
+# from .models import JobTrackerEntry, CompanyName
 from .models import BlogEntry, BlogCategory
 from .models import XlBlogEntry, XlBlogCategory
 from .models import GuestBookEntry
@@ -26,8 +26,8 @@ class XlBlogEntryAdmin(admin.ModelAdmin):
 
 admin.site.register(BlogCategory)
 admin.site.register(XlBlogCategory)
-admin.site.register(JobTrackerEntry)
-admin.site.register(CompanyName)
+# admin.site.register(JobTrackerEntry)
+# admin.site.register(CompanyName)
 admin.site.register(BookTrackerEntry)
 admin.site.register(GuestBookEntry)
 admin.site.register(SingEntry)

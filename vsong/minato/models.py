@@ -11,7 +11,6 @@ class BlogCategory(models.Model):
     def __str__(self):
         return self.name
     
-
 class BlogEntry(models.Model):
     STATUS_CHOICES = (
         ('draft', 'DRAFT'),
@@ -38,7 +37,6 @@ class XlBlogCategory(models.Model):
     def __str__(self):
         return self.name
 
-
 class XlBlogEntry(models.Model):
     STATUS_CHOICES = (
         ('draft', 'DRAFT'),
@@ -59,32 +57,32 @@ class XlBlogEntry(models.Model):
         return '{}: {} - ID:{} - {}'.format(self.category, self.status, self.id, self.title)
 
 
-#  TODO will remove eventually
-class CompanyName(models.Model):
-    name = models.CharField(max_length=100)
+# #  TODO will remove eventually
+# class CompanyName(models.Model):
+#     name = models.CharField(max_length=100)
     
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
     
 
-class JobTrackerEntry(models.Model):
-    STATUS_CHOICES = [
-        ('OPEN', 'open'),
-        ('APPLIED', 'applied'),
-        ('REJECTED', 'rejected'),
-        ('OFFER', 'offer'),
-        ('INTERVIEWING', 'interviewing'),
-    ]
+# class JobTrackerEntry(models.Model):
+#     STATUS_CHOICES = [
+#         ('OPEN', 'open'),
+#         ('APPLIED', 'applied'),
+#         ('REJECTED', 'rejected'),
+#         ('OFFER', 'offer'),
+#         ('INTERVIEWING', 'interviewing'),
+#     ]
 
-    company = models.ForeignKey(CompanyName, on_delete=models.CASCADE, related_name='company_name')
-    jobtitle = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
-    applied_on = models.DateField(auto_now_add=True)
-    status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
+#     company = models.ForeignKey(CompanyName, on_delete=models.CASCADE, related_name='company_name')
+#     jobtitle = models.CharField(max_length=50)
+#     location = models.CharField(max_length=50)
+#     applied_on = models.DateField(auto_now_add=True)
+#     status = models.CharField(max_length=25, choices=STATUS_CHOICES, default='OPEN')
         
-    def __str__(self):
-        return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)
-#  ------------------------
+#     def __str__(self):
+#         return '{}: {} - {} - STATUS: {}'.format(self.applied_on, self.company, self.jobtitle, self.status)
+# #  ------------------------
 
 
 class GuestBookEntry(models.Model):
@@ -101,9 +99,6 @@ class GuestBookEntry(models.Model):
     message = models.TextField() 
     status = models.CharField(choices=STATUS_CHOICES, default='draft')
     created_on = models.DateField(auto_now_add=True)
-
-    def __str__(self):
-        return '{}: {} - {} - STATUS: {}'.format(self.name, self.email_contact)
 
 
 class BookTrackerEntry(models.Model):
@@ -142,19 +137,18 @@ class SingEntry(models.Model):
     def __str__(self):
         return '{}: {}'.format(str(self.id).zfill(2), self.created_on)
 
+
 class BookmarkCategory(models.Model):
     name = models.CharField(max_length=100)
     
     def __str__(self):
         return self.name
 
-
 class BookmarkEntry(models.Model):
     url = models.URLField()
     title = models.CharField(max_length=50)
     about = models.CharField(max_length=100, null=True, blank=True)
     category = models.ForeignKey(BookmarkCategory, on_delete=models.CASCADE)
-
 
     def __str__(self):
         return '{}: {} - {}'.format(str(self.id).zfill(2), self.category, self.title)
