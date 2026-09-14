@@ -18,7 +18,7 @@
               linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 1;
   background-size: 100% 2px, 4px 100%; 
-
+}
 
 /* Global Accent Overrides */
 --bs-primary: #406144;          /* Forest dark green primary color */
@@ -393,9 +393,9 @@ hr, .dropdown-divider {
 .meuContainer {
   position:relative;
   display:inline-block;
-  background-color: rgba(#963a3a00, 0.5);
+  background-color: rgba(#1a1c45b8, 0.5);
   
-}
+}#0000ff80
 
 #meuMonitor {
   position: absolute;
@@ -457,6 +457,7 @@ hr, .dropdown-divider {
   
 }
 
+
 @keyframes meuComputadorRedLight {
   0%, 100% {
     background-color: inherit;
@@ -469,4 +470,6 @@ hr, .dropdown-divider {
 
 #guestBookForm {
   color: #FFB7C5;
+}
+
 }
