@@ -17,9 +17,7 @@
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
               linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 1;
-  background-size: 100% 2px, 4px 100%; /* Adjust size for pixel density */
-  pointer-events: none; /* Allows users to still click elements underneath */
-} 
+  background-size: 100% 2px, 4px 100%; 
 
 
 /* Global Accent Overrides */
@@ -286,16 +284,15 @@ hr, .dropdown-divider {
 }
 
 #hoverLearn:hover {
-  font-weight: 800; /* Subtle bold bump */
-}
+  font-weight: 800; 
 #yumeIcon{
   transition: ease-in-out;
 }
 
 #yumeIcon:hover{
-  color: #FFB7C5 !important; /* Classic HL1 Amber/Orange */
-  font-weight: 800; /* Subtle bold bump */
-  /* Soft, gentle light glow */
+  color: #FFB7C5 !important; 
+  font-weight: 800; 
+
   text-shadow: 0 0 8px rgba(#FFB7C5 , 0.6), 
                0 0 15px rgba(#FFB7C5 , 0.4); 
   animation: slowGlow 15s infinite ease-in-out; 
@@ -304,9 +301,9 @@ hr, .dropdown-divider {
 
 #navbar-floating{
   position: fixed;
-  top: 15px; /* Distance from the bottom */
-  left: 15px;  /* Distance from the right */
-  z-index: 1050; /* Ensures it stays above other content */
+  top: 15px; 
+  left: 15px;  
+  z-index: 1050; 
   margin:0px;
   padding:0px;
 }
@@ -335,18 +332,17 @@ hr, .dropdown-divider {
 
 /* for blog entry Shrunk overlay popup */
 .offcanvas.custom-popup-menu {
-  /* Restrict the dimensions so it doesn't take over the screen */
   max-width: 200px; 
   height: max-content; 
   max-height: 80vh;
   width: 350px; 
-  /* Floating presentation */
+
+
   margin: 15px;
   border: 5px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
   
-  /* Smooth scale-in shift alongside Bootstrap's sliding mechanic */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
