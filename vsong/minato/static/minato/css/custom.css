@@ -17,13 +17,14 @@
   background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
               linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   z-index: 1;
-  background-size: 100% 2px, 4px 100%; 
+  background-size: 100% 2px, 4px 100%;
+  pointer-events: none;
 }
 
 /* Global Accent Overrides */
---bs-primary: #406144;          /* Forest dark green primary color */
+--bs-primary: #406144;          
 --bs-primary-rgb: 46, 111, 64;
---bs-link-color: #FFB7C5;       /* Lighter green for links */
+--bs-link-color: #FFB7C5;       
 --bs-link-hover-color: #FFB7C5;
 background-image: url("/static/minato/assets/general/mainbg.png");
 background-repeat: no-repeat;
@@ -54,8 +55,8 @@ hr, .dropdown-divider {
         border-color: #004d00 !important;
     }
     50% {
-        box-shadow: 0 6px 25px rgba(0, 100, 0, 0.9); /* Peak brightness */
-        border-color: #00ff00 !important; /* Brighter accent during pulse */
+        box-shadow: 0 6px 25px rgba(0, 100, 0, 0.9); 
+        border-color: #00ff00 !important; 
     }
     100% {
         box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
@@ -63,8 +64,8 @@ hr, .dropdown-divider {
     }
 }
 .navbar-nav .nav-link {
-  color: #a0a0a0; /* Dimmer default text */
-  transition: all 1.3s ease-in-out; /* Smooth transition */
+  color: #a0a0a0; 
+  transition: all 1.3s ease-in-out; 
   margin:1px;
   padding:1px;
 
@@ -72,8 +73,8 @@ hr, .dropdown-divider {
 
 /* The HL1 Hover Effect */
 .navbar-nav .nav-link:hover {
-  color: #FFB7C5 !important; /* Classic HL1 Amber/Orange */
-  font-weight: 800; /* Subtle bold bump */
+  color: #FFB7C5 !important; 
+  font-weight: 800; 
   /* Soft, gentle light glow */
   text-shadow: 0 0 8px rgba(#FFB7C5, 0.6), 
                0 0 15px rgba(#FFB7C5, 0.4); 
