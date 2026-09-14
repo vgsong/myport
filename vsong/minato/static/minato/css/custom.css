@@ -10,7 +10,7 @@
 }
 
 .lofi-screen::after {
-  content: " ";
+
   display: block;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
@@ -63,6 +63,7 @@ hr, .dropdown-divider {
         border-color: #004d00 !important;
     }
 }
+
 .navbar-nav .nav-link {
   color: #a0a0a0; 
   transition: all 1.3s ease-in-out; 
@@ -76,8 +77,8 @@ hr, .dropdown-divider {
   color: #FFB7C5 !important; 
   font-weight: 800; 
   /* Soft, gentle light glow */
-  text-shadow: 0 0 8px rgba(#FFB7C5, 0.6), 
-               0 0 15px rgba(#FFB7C5, 0.4); 
+  text-shadow: 0 0 8px rgba(255, 183, 197, 0.6), 
+              0 0 15px rgba(255, 183, 197, 0.4);
   animation: slowGlow 15s infinite ease-in-out; 
   transition: ease-in-out;
   margin:1px;
@@ -284,8 +285,13 @@ hr, .dropdown-divider {
  color: #2e6f40;
 }
 
+
 #hoverLearn:hover {
   font-weight: 800; 
+}
+
+
+
 #yumeIcon{
   transition: ease-in-out;
 }
@@ -356,7 +362,7 @@ hr, .dropdown-divider {
   font-size: x-small;
 }
 
-}
+
 
 /* ---- main about me */
 #mainAboutMe {
@@ -396,7 +402,7 @@ hr, .dropdown-divider {
   display:inline-block;
   background-color: rgba(#1a1c45b8, 0.5);
   
-}#0000ff80
+}
 
 #meuMonitor {
   position: absolute;
