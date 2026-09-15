@@ -1,8 +1,29 @@
 /* Modifies Bootstrap's built-in dark theme */
 [data-bs-theme="dark"] {
+
+
+/* Global Accent Overrides */
+--bs-primary: #406144;          
+--bs-primary-rgb: 46, 111, 64;
+--bs-link-color: #FFB7C5;       
+--bs-link-hover-color: #FFB7C5;
+
+
+}
+
+
 * {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   font-stretch: condensed; /* Makes the characters slightly tighter */
+}
+
+
+body {
+  background-image: url("/static/minato/assets/general/mainbg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; 
+
 }
 
 .lofi-screen {
@@ -21,31 +42,18 @@
   pointer-events: none;
 }
 
-/* Global Accent Overrides */
---bs-primary: #406144;          
---bs-primary-rgb: 46, 111, 64;
---bs-link-color: #FFB7C5;       
---bs-link-hover-color: #FFB7C5;
-background-image: url("/static/minato/assets/general/mainbg.png");
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed; */
 
-/* --bs-body-color: #1C1B1A !important; */
-/* --bs-body-bg: <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>#1C1B1A !important; */
-/* Target all headings (h1 to h6) and text accent helpers */
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6,
 .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-  color: #FFB7C5 !important;    /* Accessible, readable accent green */
+  color: #FFB7C5 !important; 
 }
 
-/* Target horizontal rules (<hr>) */
 hr, .dropdown-divider {
-  color: #FFB7C5 !important;    /* Dark green line base color */
+  color: #FFB7C5 !important;   
   border-color: #FFB7C5 !important;
   opacity: 0.6;     
-  background-color: #FFB7C5;            /* Slightly vibrant line visibility */
+  background-color: #FFB7C5;            
 }
 
 
@@ -376,6 +384,7 @@ hr, .dropdown-divider {
 
 /* ---- main about me */
 
+
 .slider-box {
   width: 100%;
   overflow: hidden;
@@ -390,12 +399,13 @@ hr, .dropdown-divider {
 
 @keyframes slide-left {
   0% {
-    transform: translateX(100%);
+    transform: translateX(100%); 
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 .meuContainer {
   position:relative;
@@ -479,4 +489,3 @@ hr, .dropdown-divider {
   color: #FFB7C5;
 }
 
-}
