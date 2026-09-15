@@ -73,6 +73,7 @@
         {% if sing_update.status_message %}
           <div id="singMessageWindow">
 
+            <!-- window title bar -->
             <div id="singMessageTitle">
               <div>
               <strong> MESSAGEBOX </strong>
@@ -89,20 +90,38 @@
                 </div>
               </div>              
             </div>
+            <!-- end titlebar -->
 
-            <div id="singMessageUpdate">
-              {{ sing_update.status_message }}
 
-              <br>
-              <br>
-              <div id="singMessageTimestamp">
-                postdate: {{ sing_update.created_on }} by vs on a quiet afternoon
+            <div id="singMessageContainer">
+
+              <div id="singMessageWarningIcon">
+                <audio id="clickSound" src="{% static 'minato/assets/general/windows-98-error.mp3'%}" preload="auto"></audio>
+                <img src="{% static 'minato/assets/general/warning.png'%}" onclick="document.getElementById('clickSound').play()">
               </div>
-              <div id="singMessageOkbutton">
-                OK
+
+              <div id="singMessageUpdate">
+
+                {{ sing_update.status_message }}
+
+                <br>
+                <br>
+
+                <div id="singMessageTimestamp">
+
+                  postdate: {{ sing_update.created_on }} by vs on a quiet afternoon
+                
+                </div>
+
+                <div id="singMessageOkbutton">
+
+                  OK
+
+                </div>
+
               </div>
+
             </div>
-
           </div>
         {% else %}
         {% endif %}

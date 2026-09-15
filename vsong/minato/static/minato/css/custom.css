@@ -3,7 +3,7 @@
 
 
 /* Global Accent Overrides */
---bs-primary: #406144;          
+/* --bs-primary: #406144;           */
 --bs-primary-rgb: 46, 111, 64;
 --bs-link-color: #FFB7C5;       
 --bs-link-hover-color: #FFB7C5;
@@ -59,16 +59,16 @@ hr, .dropdown-divider {
 
 @keyframes slowGlow {
     0% {
-        box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
-        border-color: #004d00 !important;
+        /* box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3); */
+        /* border-color: #004d00 !important; */
     }
     50% {
-        box-shadow: 0 6px 25px rgba(0, 100, 0, 0.9); 
-        border-color: #00ff00 !important; 
+        /* box-shadow: 0 6px 25px rgba(255, 183, 197, 0.9);  */
+        /* border-color: #00ff00 !important;  */
     }
     100% {
-        box-shadow: 0 4px 10px rgba(0, 100, 0, 0.3);
-        border-color: #004d00 !important;
+        /* box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3); */
+        /* border-color: #004d00 !important; */
     }
 }
 
@@ -176,11 +176,28 @@ hr, .dropdown-divider {
 }
 
 
-#singMessageUpdate {
-  padding: 15px;
+#singMessageContainer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
   border-style: inset;
   border-color: black;
   border-width: 1.4px;
+}
+
+#singMessageWarningIcon img{
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: 3 3 0 3;
+
+}
+
+
+#singMessageUpdate {
+  padding: 15px;
+  margin: 0 auto;
   font-size: small;
   
 }
