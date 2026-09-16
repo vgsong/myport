@@ -132,7 +132,7 @@ class SingEntry(models.Model):
     listening = models.CharField(max_length=50)
     learning = models.CharField(max_length=50)
     feeling = models.CharField(max_length=50)
-    status_message = models.CharField(max_length=200, null=True, blank=True)    
+    status_message = models.TextField(max_length=400, null=True, blank=True)    
 
     created_on = models.DateField(auto_now_add=True)
 
