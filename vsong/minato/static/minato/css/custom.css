@@ -191,6 +191,19 @@ hr, .dropdown-divider {
   height: 50px;
   border: none;
   margin: 3 3 0 3;
+  animation: blink-animation 2.8s infinite;
+
+}
+
+@keyframes blink-animation {
+
+  0%,90%,100% {
+    opacity: 1;
+  }
+
+  92%, 96% {
+    opacity:0;
+  }
 
 }
 
@@ -229,6 +242,9 @@ hr, .dropdown-divider {
 #singMessageOkbutton:hover {
   border:outset
 }
+
+
+
 
 /* end of css for update broadcast in index */
 
