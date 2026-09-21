@@ -71,6 +71,7 @@
         </div>
 
         {% if sing_update.status_message %}
+
           <div id="singMessageWindow">
 
             <!-- window title bar -->
@@ -102,7 +103,7 @@
 
               <div id="singMessageUpdate">
 
-                {{ sing_update.status_message }}
+                <span id="singMessageHighlightFont">{{ sing_update.status_message }}</span>
 
                 <br>
                 <br>

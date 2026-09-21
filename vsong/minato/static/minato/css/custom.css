@@ -212,8 +212,15 @@ hr, .dropdown-divider {
   padding: 15px;
   margin: 0 auto;
   font-size: small;
+
   
 }
+
+#singMessageHighlightFont {
+  background-color: #000000; /* Bright yellow marker color */
+  color: #01782e;
+}
+
 
 #singMessageTimestamp {
   font-style: italic ;
