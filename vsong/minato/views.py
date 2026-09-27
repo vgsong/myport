@@ -202,6 +202,7 @@ def index(request):
             'recent_update' : recent_update,
             'sing_update': sing_update,
             'bookmark_items': bookmark_items,
+            'title' : 'index',
     }
 
     return render(request, 'minato/index.html', context)
@@ -264,6 +265,7 @@ def xlblog(request):
 
     context = {
                 'posts': posts,
+                'title': 'xlblog`kns',
             }
 
     return render(request, 'minato/xlblog.html', context)
@@ -323,7 +325,7 @@ def jquery_learn(request):
 def about(request):
 
     context = {
-        
+        'title': 'about'
     }
 
     return render(request, 'minato/about.html', context)

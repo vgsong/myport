@@ -15,13 +15,12 @@
 
     </head>
 
-    <body data-bs-theme="dark" class="lofi-screen">
-
+    <body class="lofi-screen">
 
         {% include 'minato/main/navbar.html' %}
 
         <div class="d-flex flex-row bd-highlight mt-1 p-0 col-md-10 p-md-3">
-
+            <p>{{ title }}</p>
                    
                 {% block content %}
                 {% endblock %}

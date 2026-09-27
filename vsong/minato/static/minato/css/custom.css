@@ -1,15 +1,3 @@
-/* Modifies Bootstrap's built-in dark theme */
-[data-bs-theme="dark"] {
-
-
-/* Global Accent Overrides */
-/* --bs-primary: #406144;           */
---bs-primary-rgb: 46, 111, 64;
---bs-link-color: #FFB7C5;       
---bs-link-hover-color: #FFB7C5;
-
-
-}
 
 
 * {
@@ -44,10 +32,10 @@ body {
 
 
 h1, h2, h3, h4, h5, h6, 
-.h1, .h2, .h3, .h4, .h5, .h6,
-.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   color: #FFB7C5 !important; 
 }
+
 
 hr, .dropdown-divider {
   color: #FFB7C5 !important;   
@@ -72,6 +60,8 @@ hr, .dropdown-divider {
     }
 }
 
+/* navbar MENU POPUP CSS BEG  */
+
 .navbar-nav .nav-link {
   color: #a0a0a0; 
   transition: all 1.3s ease-in-out; 
@@ -93,7 +83,9 @@ hr, .dropdown-divider {
   padding:1px;
 
 }
+/* END OF navbar MENU POPUP  */
 
+/* main top card CSS START  */
 #mainCard{
   border-style: dotted;
   border-width: 1.7px;
@@ -120,8 +112,10 @@ hr, .dropdown-divider {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+/* main top card CSS END   */
 
-/* ---- updates broadcast */
+
+/* CSS FOR UPDATES SESSION */
 
 #singMessageWindow {
   border-style: inset;
@@ -192,7 +186,6 @@ hr, .dropdown-divider {
   border: none;
   margin: 3 3 0 3;
   animation: blink-animation 2.8s infinite;
-
 }
 
 @keyframes blink-animation {
@@ -212,15 +205,12 @@ hr, .dropdown-divider {
   padding: 15px;
   margin: 0 auto;
   font-size: small;
-
-  
 }
 
 #singMessageHighlightFont {
-  background-color: #000000; /* Bright yellow marker color */
-  color: #01782e;
+  background-color: #000000;
+  color: #97e7ab;
 }
-
 
 #singMessageTimestamp {
   font-style: italic ;
@@ -243,17 +233,16 @@ hr, .dropdown-divider {
   padding: 2px 5px 2px 5px;
   margin: 10px 45% 10px;
   transition: border 0.3s;
-  
 }
 
 #singMessageOkbutton:hover {
   border:outset
 }
 
+/* END CSS FOR UPDATES SESSION */
 
 
-
-/* end of css for update broadcast in index */
+/* bottom container plants */
 
 #planterNook{
   display: flex;
@@ -276,6 +265,7 @@ hr, .dropdown-divider {
   width: 30px;
 }
 
+/* END of bottom container plants */
 
 
 #bookmarkList {
@@ -284,23 +274,15 @@ hr, .dropdown-divider {
   margin: 0;
 }
 
-
 /* blog --- */
 #blogFilterCard {
-
   border-style: dotted;
   border-width: 3px;
   margin:10px;
 }
 
-
-
-
-
 #blogEntryCard {
-
   margin:10px;
-
 }
 
 #blogEntryCard > h2 {
@@ -313,7 +295,6 @@ hr, .dropdown-divider {
   list-style-type: none;
 }
 
-/* ----- */
 
 #nowDiv{
   border: 5px solid white;
@@ -421,10 +402,6 @@ hr, .dropdown-divider {
 }
 
 
-
-/* ---- main about me */
-
-
 .slider-box {
   width: 100%;
   overflow: hidden;
@@ -453,6 +430,9 @@ hr, .dropdown-divider {
   background-color: rgba(#1a1c45b8, 0.5);
   
 }
+
+/* ABOUT ME CSS */
+
 
 #meuMonitor {
   position: absolute;
@@ -524,6 +504,7 @@ hr, .dropdown-divider {
   }
 }
 
+/* END ABOUT ME CSS */
 
 #guestBookForm {
   color: #FFB7C5;
