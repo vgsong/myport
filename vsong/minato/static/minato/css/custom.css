@@ -4,7 +4,7 @@
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
   font-stretch: condensed; /* Makes the characters slightly tighter */
 }
-
+/* BEG global body related base.html   */
 
 body {
   background-image: url("/static/minato/assets/general/mainbg.png");
@@ -33,7 +33,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #FFB7C5 !important; 
+  color: #FFB7C5;
 }
 
 
@@ -43,22 +43,9 @@ hr, .dropdown-divider {
   opacity: 0.6;     
   background-color: #FFB7C5;            
 }
+/* BEG global body related base.html   */
 
 
-@keyframes slowGlow {
-    0% {
-        /* box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3); */
-        /* border-color: #004d00 !important; */
-    }
-    50% {
-        /* box-shadow: 0 6px 25px rgba(255, 183, 197, 0.9);  */
-        /* border-color: #00ff00 !important;  */
-    }
-    100% {
-        /* box-shadow: 0 4px 10px rgba(255, 183, 197, 0.3); */
-        /* border-color: #004d00 !important; */
-    }
-}
 
 /* navbar MENU POPUP CSS BEG  */
 
