@@ -218,6 +218,10 @@ def coffee_shop(request):
     return render(request, 'minato/coffee_shop.html')
 
 
+def daily(request):
+    context = {}
+    return render(request, 'minato/daily.html', context)
+
 # ----- blog views --------------------------
 def blog(request):
 

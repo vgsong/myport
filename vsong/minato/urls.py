@@ -10,6 +10,7 @@ urlpatterns= [
     path('coffee_shop/', views.coffee_shop, name='coffee_shop'),
     path('jquery_learn/', views.jquery_learn, name='jquery_learn'),
 
+    path('daily/', views.daily, name='daily'),
     path('reading/', views.reading, name='reading'),
     path('xlblog/', views.xlblog, name='xlblog'),
     path('xlblog/details/<int:detail_id>', views.xlblog, name='xlblog'),
