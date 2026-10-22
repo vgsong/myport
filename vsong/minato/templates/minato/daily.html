@@ -3,7 +3,18 @@
 
 
     <div class="container-fluid d-flex flex-row" id="mainCardBlog">
-        
+
+        {% for entry in all_entries %}
+
+        <p>
+            <strong>{{entry.created_on}}</strong>: 
+            {{entry.status_message}}
+        </p>
+
+        <hr style="border-top: 1px solid #FFB7C5;width: 100%;">
+
+        {% endfor %}
+
 
         <div class="container pl-3 pt-3">
             <a href="{% url 'index' %}"><p>‹--Home</p></a>
