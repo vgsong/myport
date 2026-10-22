@@ -219,7 +219,10 @@ def coffee_shop(request):
 
 
 def daily(request):
-    context = {}
+    all_entries = SingEntry.objects.all().order_by('-created_on')
+    context = {
+        'all_entries': all_entries,
+    }
     return render(request, 'minato/daily.html', context)
 
 # ----- blog views --------------------------
