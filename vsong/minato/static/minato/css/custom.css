@@ -383,6 +383,21 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+#indexAbout {
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* Medium screens and up (min-width: 768px) */
+@media (min-width: 768px) {
+  .your-class {
+    flex: 1 1 0%;
+    max-width: 100%;
+    text-align: left; /* or text-align: start */
+  }
+}
 
 /* ---- main about me */
 #mainAboutMe {
