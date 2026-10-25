@@ -1,4 +1,8 @@
-
+:root {
+  --pink: #FFB7C5;
+  --black: #000000;
+  --nav-link-gray: #a0a0a0; 
+}
 
 * {
   font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
@@ -22,29 +26,28 @@ body {
   content: " ";
   display: block;
   position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-              linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
   background-size: 100% 2px, 4px 100%;
+  z-index: 1;
   pointer-events: none;
 }
 
-
 h1, h2, h3, h4, h5, h6, 
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  color: #FFB7C5;
+  color: var(--pink);
 }
 
 
 
 /* BEG global body related base.html   */
 
-
 /* navbar MENU POPUP CSS BEG  */
 
 .navbar-nav .nav-link {
-  color: #a0a0a0; 
+  color: var(--nav-link-color-gray); 
   transition: all 1.3s ease-in-out; 
   margin:1px;
   padding:1px;
@@ -53,7 +56,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* The HL1 Hover Effect */
 .navbar-nav .nav-link:hover {
-  color: #FFB7C5 !important; 
+  color: var(--pink);
   font-weight: 800; 
   /* Soft, gentle light glow */
   text-shadow: 0 0 8px rgba(255, 183, 197, 0.6), 
@@ -70,7 +73,7 @@ h1, h2, h3, h4, h5, h6,
 #mainCard{
   border-style: dotted;
   border-width: 1.7px;
-  border-color:#FFB7C5;
+  border-color:var(--pink);
 
   max-width: 777px;
   background-color:#1E252B;
@@ -83,7 +86,7 @@ h1, h2, h3, h4, h5, h6,
 #mainCardBlog{
   border-style: dotted;
   border-width: 1.7px;
-  border-color:#FFB7C5;
+  border-color:var(--pink);
 
   max-width: 900px;
   background-color:#1E252B ;
@@ -103,7 +106,7 @@ h1, h2, h3, h4, h5, h6,
 #singMessageWindow {
   border-style: inset;
   border-width: 2px;
-  border-color:#FFB7C5;
+  border-color:var(--pink);
   background-color: #656565;
   display: flex;
   flex-direction: column;
@@ -159,7 +162,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   border: none;
   border-style: inset;
-  border-color: black;
+  border-color: var(--black);
   border-width: 1.4px;
 }
 
@@ -191,7 +194,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 #singMessageHighlightFont {
-  background-color: #000000;
+  background-color: var(--black);
   color: #97e7ab;
 }
 
@@ -274,7 +277,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 #blogEntryCard > h2 {
-  color:#FFB7C5;
+  color:var(--pink);
 }
 
 #blogEntryList {
@@ -313,14 +316,14 @@ h1, h2, h3, h4, h5, h6,
   transition: ease-in-out;
 }
 
-#yumeIcon:hover{
-  color: #FFB7C5 !important; 
-  font-weight: 800; 
+#yumeIcon:hover {
+  color: var(--pink);
+  font-weight: 800;
 
-  text-shadow: 0 0 8px rgba(#FFB7C5 , 0.6), 
-               0 0 15px rgba(#FFB7C5 , 0.4); 
-  animation: slowGlow 15s infinite ease-in-out; 
-  transition: ease-in-out;
+  text-shadow: 0 0 8px rgba(var(--pink), 0.6),
+               0 0 15px rgba(var(--pink), 0.4);
+  animation: slowGlow 15s infinite ease-in-out;
+  transition: all ease-in-out;
 }
 
 #navbar-floating{
@@ -332,26 +335,22 @@ h1, h2, h3, h4, h5, h6,
   padding:0px;
 }
 
-.navbar-toggler{
-  color: #FFB7C5;
+.navbar-toggler {
+  color: var(--pink);
   padding: 3px;
   margin: 0;
 
+  transition: background-color 0.1s, transform 0.1s;
 }
 
-.navbar-toggler:hover{
-  background-color: #FFB7C5;
+.navbar-toggler:hover {
+  background-color: var(--pink);
   transform: rotate(180deg);
-  transition: 0.1s;
-  margin:0px;
-  padding:0px;
 }
 
 .navbar-toggler:focus {
   outline: none;
   box-shadow:none;
-  margin:0px;
-  padding:0px;
 }
 
 /* for blog entry Shrunk overlay popup */
@@ -387,7 +386,7 @@ h1, h2, h3, h4, h5, h6,
   max-height: 200px;
   text-align: left;
   overflow-y:auto;
-  border: #FFB7C5;
+  border: var(--pink);
   border-style: dotted;
   border-width: 2.3px;
   padding: 20px;
@@ -405,7 +404,7 @@ h1, h2, h3, h4, h5, h6,
 /* ---- main about me */
 #mainAboutMe {
   padding: 30px;
-  border: #FFB7C5;
+  border: var(--pink);
   border-style: dotted;
   border-width: 1.6px;
 }
@@ -474,8 +473,6 @@ h1, h2, h3, h4, h5, h6,
   right:auto;
   bottom:auto;
   left:auto;
-  width: none;
-  height: none;
 
 }
 
@@ -516,6 +513,6 @@ h1, h2, h3, h4, h5, h6,
 /* END ABOUT ME CSS */
 
 #guestBookForm {
-  color: #FFB7C5;
+  color: var(--pink);
 }
 
