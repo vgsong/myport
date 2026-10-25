@@ -1,11 +1,19 @@
 
 {% extends 'minato/main/base.html' %}  
-{% load plotly_dash %}
+<!-- {% load plotly_dash %} -->
+
+{% load static %}
+
+{% block page_css %}
+<link ref="stylesheet" href="{% static 'minato/css/index.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <div class="container p-3 d-flex flex-column">
 
-  <div class="m-1 p-3" id="mainCard">
+  <div id="mainCard">
+
     <div class="container-fluid py-2 mb-0 ">
       
       <div class="row align-items-center g-4">
@@ -18,6 +26,7 @@
         </div>
 
         <div id="indexAbout">
+          
           <h3>マイハブ </h3>
 
           <p>I am kazu -- Welcome to my webgarden</p>
@@ -117,7 +126,7 @@
 
 
 
-  <div class="m-1 p-3" id="mainCard">
+  <div id="mainCard">
     
   <div class="container mb-0 ">
 

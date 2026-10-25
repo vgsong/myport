@@ -11,8 +11,9 @@
         <link rel="icon" href="{% static 'minato/assets/general/favicon.png'%}">
         <script src="{% static 'minato/js/chart.min.js' %}"></script>
         {% bootstrap_css %}
-        <link rel="stylesheet" href="{% static 'minato/css/custom.css'%}">
 
+        <link rel="stylesheet" href="{% static 'minato/css/base.css'%}">
+        {% block page_css %} {% endblock %}
     </head>
 
     <body class="lofi-screen">

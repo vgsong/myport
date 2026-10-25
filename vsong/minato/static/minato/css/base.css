@@ -37,14 +37,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-/* hr, .dropdown-divider {
-  color: #FFB7C5 !important;   
-  border-color: #FFB7C5 !important;
-  opacity: 0.6;     
-  background-color: #FFB7C5;            
-} */
-/* BEG global body related base.html   */
 
+/* BEG global body related base.html   */
 
 
 /* navbar MENU POPUP CSS BEG  */
@@ -81,6 +75,8 @@ h1, h2, h3, h4, h5, h6,
   max-width: 777px;
   background-color:#1E252B;
   opacity: 0.90;
+  margin: 4px;
+  padding: 16px;
 
 }
 
@@ -227,6 +223,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* END CSS FOR UPDATES SESSION */
+
 
 
 /* bottom container plants */
@@ -387,7 +384,13 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
   flex: 0 0 100%;
   max-width: 100%;
-  text-align: center;
+  max-height: 200px;
+  text-align: left;
+  overflow-y:auto;
+  border: #FFB7C5;
+  border-style: dotted;
+  border-width: 2.3px;
+  padding: 20px;
 }
 
 /* Medium screens and up (min-width: 768px) */
