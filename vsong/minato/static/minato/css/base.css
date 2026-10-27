@@ -1,6 +1,7 @@
 :root {
   --pink: #FFB7C5;
   --black: #000000;
+  --red: #DF0024;
   --nav-link-gray: #a0a0a0; 
 }
 
@@ -16,6 +17,13 @@ body {
   background-size: cover;
   background-attachment: fixed; 
 
+}
+
+hr {
+    height: 1px;          /* Set the height (you can adjust this value) */
+    width: 100%;          /* Set the width to 100% of its container */
+    background-color: var(--pink); /* Change color if needed */
+    border: none;         /* Remove default border */
 }
 
 .lofi-screen {
@@ -69,6 +77,24 @@ h1, h2, h3, h4, h5, h6,
 }
 /* END OF navbar MENU POPUP  */
 
+
+.mainLayout {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .mainLayout {
+        flex-direction: column;
+        padding: 0;
+        width: 65%;
+    }
+}
+
+
 /* main top card CSS START  */
 #mainCard{
   border-style: dotted;
@@ -76,12 +102,15 @@ h1, h2, h3, h4, h5, h6,
   border-color:var(--pink);
 
   max-width: 777px;
+  min-width: 400px;
   background-color:#1E252B;
   opacity: 0.90;
   margin: 4px;
-  padding: 16px;
+  padding: 20px;
 
 }
+
+
 
 #mainCardBlog{
   border-style: dotted;
@@ -305,11 +334,9 @@ h1, h2, h3, h4, h5, h6,
  color: #2e6f40;
 }
 
-
 #hoverLearn:hover {
   font-weight: 800; 
 }
-
 
 
 #yumeIcon{
@@ -371,7 +398,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* Subtle styling touch to dim the page background behind our popup window */
 .offcanvas-backdrop {
-  opacity: 0.7 !important;
+  opacity: 0.7;
 }
 
 #footerFont {
@@ -392,14 +419,9 @@ h1, h2, h3, h4, h5, h6,
   padding: 20px;
 }
 
-/* Medium screens and up (min-width: 768px) */
-@media (min-width: 768px) {
-  .your-class {
-    flex: 1 1 0%;
-    max-width: 100%;
-    text-align: left; /* or text-align: start */
-  }
-}
+
+
+
 
 /* ---- main about me */
 #mainAboutMe {
@@ -506,7 +528,7 @@ h1, h2, h3, h4, h5, h6,
     background-color: inherit;
   }
   50%{
-    background-color:#DF0024;
+    background-color:var(--red);
   }
 }
 
