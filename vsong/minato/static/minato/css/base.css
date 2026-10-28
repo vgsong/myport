@@ -2,7 +2,7 @@
   --pink: #FFB7C5;
   --black: #000000;
   --red: #DF0024;
-  --nav-link-gray: #a0a0a0; 
+  ----nav-link-color-gray: #a0a0a0; 
 }
 
 * {
@@ -48,8 +48,6 @@ h1, h2, h3, h4, h5, h6,
   color: var(--pink);
 }
 
-
-
 /* BEG global body related base.html   */
 
 /* navbar MENU POPUP CSS BEG  */
@@ -76,6 +74,21 @@ h1, h2, h3, h4, h5, h6,
 
 }
 /* END OF navbar MENU POPUP  */
+
+/* Combined custom class */
+.base-body {
+    display: flex;
+    flex-direction: row; /* Default, but included for clarity */
+    border: none; /* Example border color, adjust as needed */
+    margin-top: 0.25rem;
+    padding: 0;
+    flex: 0 0 16.6667%; /* Equivalent to col-2 in Bootstrap grid system */
+
+    @media (min-width: 768px) {
+        padding: 1rem;
+        flex: 0 0 83.3333%; /* Equivalent to col-md-10 in Bootstrap grid system */
+    }
+}
 
 
 .mainLayout {
@@ -409,8 +422,8 @@ h1, h2, h3, h4, h5, h6,
 #indexAbout {
   width: 100%;
   flex: 0 0 100%;
-  max-width: 100%;
-  max-height: 200px;
+  max-width: 75%;
+  max-height: 275px;
   text-align: left;
   overflow-y:auto;
   border: var(--pink);
@@ -418,10 +431,11 @@ h1, h2, h3, h4, h5, h6,
   border-width: 2.3px;
   padding: 20px;
 }
-
-
-
-
+@media (max-width: 768px) {
+    #indexAbout {
+      max-width: 100%;
+    }
+}
 
 /* ---- main about me */
 #mainAboutMe {
