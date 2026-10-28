@@ -90,8 +90,8 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
-
-.mainLayout {
+/* main layout under base-body */
+.main-layout {
   padding: 10px;
   display: flex;
   flex-direction: row;
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 @media (max-width: 768px) {
-    .mainLayout {
+    .main-layout {
         flex-direction: column;
         padding: 0;
         width: 65%;
@@ -109,9 +109,9 @@ h1, h2, h3, h4, h5, h6,
 
 
 /* main top card CSS START  */
-#mainCard{
+.main-card {
   border-style: dotted;
-  border-width: 1.7px;
+  border-width: 2.3px;
   border-color:var(--pink);
 
   max-width: 777px;
@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-#indexAbout {
+.index-about {
   width: 100%;
   flex: 0 0 100%;
   max-width: 75%;
@@ -432,7 +432,7 @@ h1, h2, h3, h4, h5, h6,
   padding: 20px;
 }
 @media (max-width: 768px) {
-    #indexAbout {
+    .index-about {
       max-width: 100%;
     }
 }
